@@ -10,9 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161103195130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "presentations", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "location",   null: false
+    t.string   "audience",   null: false
+    t.datetime "start_time", null: false
+    t.datetime "end_time",   null: false
+    t.string   "time_taken"
+    t.text     "notes"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_presentations_on_user_id", using: :btree
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.decimal  "anger",           null: false
+    t.decimal  "contempt",        null: false
+    t.decimal  "disgust",         null: false
+    t.decimal  "fear",            null: false
+    t.decimal  "happiness",       null: false
+    t.decimal  "neutral",         null: false
+    t.decimal  "sadness",         null: false
+    t.decimal  "surprise",        null: false
+    t.integer  "presentation_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["presentation_id"], name: "index_results_on_presentation_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username",        null: false
+    t.string   "email",           null: false
+    t.string   "password_digest"
+    t.string   "organization"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end
