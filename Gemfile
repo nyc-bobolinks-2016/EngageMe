@@ -33,6 +33,8 @@ gem 'react-rails'
 
 gem 'factory_girl'
 
+gem 'bundler'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

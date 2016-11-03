@@ -27,7 +27,7 @@ Technologies used
   - React Front-End
   - jQuery for AJAX requests
   - JpegCamera – JavaScript webcam image capture library
-  - JavaScript library for data visualization
+  - JavaScript library for data visualization - D3?
   - RSpec and Factory Girl (perhaps Capybara)
 
 Who will make the executive decision if there is a disagreement - Tyler
@@ -68,7 +68,7 @@ User stories
 
   - User can create an account
   - User can edit their account
-  - User can login and logdout
+  - User can login and logout
   - User can create a new presentation
   - User can start a new presentation
   - User can monitor the emotional reaction to an in-progress presentation
@@ -81,14 +81,23 @@ Stretch
   - Users can record presentation audio and compare it to graphs
   - User can get recommendations during an in-progress presentation on how to better engage the audience
   - Sign in with Facebook (potentially add post about the presentation to their timeline)
+  - Look into using Devise?
 
 Tasks
 
-  - Research Devise vs. Bcrypt for authentication (Amanda) - 2 hours
+  - Create our preliminary app in Rails and push to Heroku (team)
+  - Research image capture storage via AWS S3 (Amanda) - 2 hours
   - Research JavaScript libraries for charts and presentation analytics (Roman) - 2 hours
-  - Research connecting external web cam to computer for image capture (Tyler) - 2 hours
-  - Research connecting AWS with Heroku for image storage (pre-API call)
+  - Research connecting external web cam to computer (Tyler) - 2 hours
   - Implement user authentication (Amanda)
   - Implement graphs and analytics (Roman)
   - Implement camera connection and video capture (Tyler)
   - Implement API calls with images (TBD)
+
+Debbie's Suggestions
+
+  - Make sure we can use our app with Heroku
+  - Goal is MVP by Monday morning - we will show the other groups what we've done
+  - Make sure we are focusing on the core concept before building other things
+  - Make sure that we're not adding the log files when we commit - don't use git add .
+  
