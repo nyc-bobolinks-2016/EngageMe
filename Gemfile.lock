@@ -179,6 +179,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bundler
   byebug
   capybara
   coffee-rails (~> 4.2)
@@ -199,4 +200,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.1
+   1.13.6
