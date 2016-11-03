@@ -5,6 +5,10 @@ Real-time presentation analytics
 
 Work Hour Expectations (186)
 
+General idea: each of us work 62 hours during the next week
+
+General schedule:
+
   - Thursday:  11am - 7:30pm
   - Friday:    9am - 8pm
   - Saturday:  1pm - 8pm
@@ -64,7 +68,8 @@ User stories
 
   - User can create an account
   - User can edit their account
-  - User can login and logout
+  - User can login and logdout
+  - User can create a new presentation
   - User can start a new presentation
   - User can monitor the emotional reaction to an in-progress presentation
   - User can view analytics about past presentations
@@ -76,3 +81,14 @@ Stretch
   - Users can record presentation audio and compare it to graphs
   - User can get recommendations during an in-progress presentation on how to better engage the audience
   - Sign in with Facebook (potentially add post about the presentation to their timeline)
+
+Tasks
+
+  - Research Devise vs. Bcrypt for authentication (Amanda) - 2 hours
+  - Research JavaScript libraries for charts and presentation analytics (Roman) - 2 hours
+  - Research connecting external web cam to computer for image capture (Tyler) - 2 hours
+  - Research connecting AWS with Heroku for image storage (pre-API call)
+  - Implement user authentication (Amanda)
+  - Implement graphs and analytics (Roman)
+  - Implement camera connection and video capture (Tyler)
+  - Implement API calls with images (TBD)
