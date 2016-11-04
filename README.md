@@ -100,4 +100,18 @@ Debbie's Suggestions
   - Goal is MVP by Monday morning - we will show the other groups what we've done
   - Make sure we are focusing on the core concept before building other things
   - Make sure that we're not adding the log files when we commit - don't use git add .
-  
+
+-----------------------------------------------------------------------
+
+Roles for today (Friday, 11/4/16)
+
+  - Amanda: Scrum master
+  - Roman: Git master
+  - Tyler: Dev Ops master
+
+Goals for today (Friday, 11/4/16)
+
+  - User registration/login/logout set up
+  - Routes and preliminary wireframed views created
+  - Determine whether we can use the webcam on the live Heroku version of the website or if we need to run it on LocalHost
+  - Working manual prototype on running presentation page (video frame capture, upload to URL, make API request with image and get back/display JSON reponse string) - either on LocalHost or Heroku
