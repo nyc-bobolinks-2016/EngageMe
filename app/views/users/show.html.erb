@@ -1,14 +1,14 @@
 <h1>Hello <%= @user.username %></h1>
 
-<h2>Your Presentations:</h2>
+<h2>Your Previous Presentations:</h2>
 
 <% if @presentations %>
   <ul>
     <% @presentations.each do |presentation| %>
-      <li><%= presentation.name %></li>
+      <li><%= link_to presentation.name, user_presentation_path(@user, presentation) %></li>
   <% end %>
 </ul>
 
 <% else %>
- <p>You currently have no saved presentations.
+ <p>You currently have no previous presentations.
 <% end %>
