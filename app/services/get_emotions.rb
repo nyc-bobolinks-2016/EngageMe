@@ -1,4 +1,5 @@
 class GetEmotions
+  require 'rest-client'
   def initialize
     @url = 'https://dbc-engage-me.herokuapp.com/snapshot.jpg'
   end
