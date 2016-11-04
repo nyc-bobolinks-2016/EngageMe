@@ -20,6 +20,14 @@ class PresentationsController < ApplicationController
     end
   end
 
+  def snapshot
+    base_64_img = params[:snapshot]
+
+    File.open('./public/snapshot.jpg', 'wb') do|f|
+      f.write(Base64.decode64(base_64_img))
+    end
+  end
+
   private
 
   def presentation_params
