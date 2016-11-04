@@ -21,11 +21,9 @@ class PresentationsController < ApplicationController
   end
 
   def snapshot
-    base_64_img = params[:snapshot]
-
-    File.open('./public/snapshot.jpg', 'wb') do|f|
-      f.write(Base64.decode64(base_64_img))
-    end
+    base_64_img = params[:pic]
+    CreateImage.new(base_64_img).call
+    GetEmotions.new().call
   end
 
   private
