@@ -1,5 +1,7 @@
 <h1>Hello <%= @user.username %></h1>
 
+<%= link_to 'Create A New Presentation', new_user_presentation_path(@user) %>
+
 <h2>Your Previous Presentations:</h2>
 
 <% if @presentations %>
