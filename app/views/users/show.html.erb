@@ -1,1 +1,14 @@
 <h1>Hello <%= @user.username %></h1>
+
+<h2>Your Presentations:</h2>
+
+<% if @presentations %>
+  <ul>
+    <% @presentations.each do |presentation| %>
+      <li><%= presentation.name %></li>
+  <% end %>
+</ul>
+
+<% else %>
+ <p>You currently have no saved presentations.
+<% end %>
