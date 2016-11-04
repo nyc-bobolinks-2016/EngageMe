@@ -1,5 +1,5 @@
 class GetEmotions
-  def initialize()
+  def initialize
     @url = 'https://dbc-engage-me.herokuapp.com/snapshot.jpg'
   end
 

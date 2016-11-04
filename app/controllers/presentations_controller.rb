@@ -22,7 +22,9 @@ class PresentationsController < ApplicationController
 
   def snapshot
     base_64_img = params[:pic]
-    CreateImage.new(base_64_img).call
+    puts "---------------------------------------------------------------------"
+    CreateImage.new(image: base_64_img).call
+    puts "====================================================================="
     GetEmotions.new().call
   end
 
