@@ -49,12 +49,3 @@ Presentation.all.each do |presentation|
       )
   end
 end
-
-anger 
-contempt
-disgust
-fear
-happiness
-neutral
-sadness
-surprise
