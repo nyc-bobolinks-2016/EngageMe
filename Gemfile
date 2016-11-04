@@ -35,6 +35,8 @@ gem 'factory_girl'
 
 gem 'bundler'
 
+gem 'faker'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
