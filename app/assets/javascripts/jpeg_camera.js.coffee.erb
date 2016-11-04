@@ -1,0 +1,14 @@
+#= require jpeg_camera/swfobject
+#= require jpeg_camera/canvas-to-blob
+#= require jpeg_camera/jpeg_camera
+
+$ ->
+  if window.JpegCamera
+    JpegCamera.DefaultOptions.swf_url =
+      "<%= asset_path "jpeg_camera/jpeg_camera.swf" %>"
+    JpegCamera.DefaultOptions.shutter_mp3_url =
+      "<%= asset_path "jpeg_camera/shutter.mp3" %>"
+    JpegCamera.DefaultOptions.shutter_ogg_url =
+      "<%= asset_path "jpeg_camera/shutter.ogg" %>"
+    JpegCamera.DefaultOptions.csrf_token =
+      $("meta[name=\"csrf-token\"]").attr("content")
