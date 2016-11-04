@@ -1,0 +1,16 @@
+<h1>Hello <%= @user.username %></h1>
+
+<%= link_to 'Create A New Presentation', new_user_presentation_path(@user) %>
+
+<h2>Your Previous Presentations:</h2>
+
+<% if @presentations %>
+  <ul>
+    <% @presentations.each do |presentation| %>
+      <li><%= link_to presentation.name, user_presentation_path(@user, presentation) %></li>
+  <% end %>
+</ul>
+
+<% else %>
+ <p>You currently have no previous presentations.
+<% end %>

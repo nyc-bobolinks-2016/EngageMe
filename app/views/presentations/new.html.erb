@@ -1,0 +1,40 @@
+<h2>New Presentation</h2>
+
+<% if @errors %>
+<ul>
+  <% @errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for([@user, @user.presentations.build]) do |f| %>
+
+  Name:
+  <br>
+    <%= f.text_field :name %>
+  <br>
+  Location:
+  <br>
+    <%= f.text_field :location %>
+  <br>
+  Audience:
+  <br>
+    <%= f.text_field :audience %>
+  <br>
+  Start Time:
+  <br>
+    <%= f.text_field :start_time %>
+  <br>
+  End Time:
+  <br>
+
+    <%= select_time() %>
+  <br>
+  Notes:
+  <br>
+    <%= f.text_area :notes %>
+  <br>
+  <%= f.submit %>
+
+<% end %>
