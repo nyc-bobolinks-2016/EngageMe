@@ -1,4 +1,5 @@
-<h2>New Presentation</h2>
+<div class="container">
+  <h2>New Presentation</h2>
 
 <% if @errors %>
 <ul>
@@ -24,8 +25,7 @@
   <br>
   Start Time:
   <br>
-    <!-- <%= f.date_field :start_time, class: 'datepicker' %> -->
-    <%= select_tag(:city_id, options_for_select([['Lisbon', 1], ['Madrid', 2]])) %>
+    <%= f.date_field :start_time, class: 'datepicker' %>
   <br>
   End Time:
   <br>
@@ -39,3 +39,4 @@
   <%= f.submit %>
 
 <% end %>
+</div>
