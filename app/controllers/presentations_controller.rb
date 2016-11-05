@@ -20,6 +20,10 @@ class PresentationsController < ApplicationController
     end
   end
 
+  def run
+    @presentation = Presentation.find_by(id: params[:id])
+  end
+
   private
 
   def presentation_params
