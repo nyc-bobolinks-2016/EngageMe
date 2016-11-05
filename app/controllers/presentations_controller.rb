@@ -25,7 +25,10 @@ class PresentationsController < ApplicationController
     CreateImage.new(image: base_64_img).call
     GetEmotions.new().call
     ResponseLogic.new.average(response)
-    
+  end
+
+  def run
+    @presentation = Presentation.find_by(id: params[:id])
   end
 
   private
