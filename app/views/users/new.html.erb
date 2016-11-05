@@ -1,4 +1,13 @@
-<h1>Register</h1>
+<div class="container">
+  <h2>Register</h2>
+
+<% if @errors %>
+<ul>
+  <% @errors.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
 
 <% if @errors %>
 <ul>
@@ -43,3 +52,4 @@
   <%= f.submit 'Register' %>
 
 <% end %>
+</div>

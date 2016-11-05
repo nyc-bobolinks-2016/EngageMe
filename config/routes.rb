@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   post '/presentations/snapshot' => 'presentations#snapshot'
 
-  root 'users#index'
+  root 'welcome#index'
 end
