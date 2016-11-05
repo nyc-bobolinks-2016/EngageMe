@@ -1,16 +1,44 @@
 <h1>Register</h1>
 
+<% if @errors %>
+<ul>
+  <% @errors.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for :user, url: '/users' do |f| %>
 
-  Username: <%= f.text_field :username %>
+  Username:
   <br>
-  Email: <%= f.text_field :email %>
+  <div class="input-field offset-s3 col s6">
+    <%= f.text_field :username %>
+  </div>
   <br>
-  Organization: <%= f.text_field :organization %>
+  Email:
   <br>
-  Password: <%= f.password_field :password %>
+  <div class="input-field offset-s3 col s6">
+    <%= f.text_field :email %>
+  </div>
   <br>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  Organization:
+  <br>
+  <div class="input-field offset-s3 col s6">
+    <%= f.text_field :organization %>
+  </div>
+  <br>
+  Password:
+  <br>
+  <div class="input-field offset-s3 col s6">
+    <%= f.password_field :password %>
+  </div>
+  <br>
+  Password Confirmation:
+  <br>
+  <div class="input-field offset-s3 col s6">
+    <%= f.password_field :password_confirmation %>
+  </div>
   <br>
   <%= f.submit 'Register' %>
 
