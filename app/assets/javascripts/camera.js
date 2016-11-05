@@ -14,7 +14,10 @@ $(document).ready(function(){
       type: 'post',
       data: {pic: pic}
     }).done(function(response){
-      console.log(response);
+      var emotions = Object.keys(response)
+      for(i=0; i < keys.length; i++){
+	       $('#' + keys[i]).css('font-size', response[keys[i]]);
+       }
     })
   })
 })
