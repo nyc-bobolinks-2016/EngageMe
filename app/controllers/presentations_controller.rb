@@ -22,10 +22,10 @@ class PresentationsController < ApplicationController
 
   def snapshot
     base_64_img = params[:pic]
-    puts "---------------------------------------------------------------------"
     CreateImage.new(image: base_64_img).call
-    puts "====================================================================="
     GetEmotions.new().call
+    ResponseLogic.new.average(response)
+    
   end
 
   private
