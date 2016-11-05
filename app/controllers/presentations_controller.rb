@@ -29,6 +29,7 @@ class PresentationsController < ApplicationController
 
   def run
     @presentation = Presentation.find_by(id: params[:id])
+    render 'run'
   end
 
   private

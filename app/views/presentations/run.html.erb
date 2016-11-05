@@ -1,5 +1,35 @@
 <div class="container">
-  Hello world
-  <br>
-  <%= @presentation.name %>
+  <h1>Yay! It worked!</h1>
+
+  <div id="camera" class="center">
+    <video autoplay="true" id="videoElement"></video>
+    <button id='snap' type="button" value="Send Picture"></button>
+    <canvas id='canvas' width='640' height='480'></canvas>
+  </div>
+
+  <div class="container">
+    <div id="anger">Anger</div>
+    <div id="contempt">Contempt</div>
+    <div id="disgust">Disgust</div>
+    <div id="fear">Fear</div>
+    <div id="happiness">Happiness</div>
+    <div id="neutral">Neutral</div>
+    <div id="sadness">Sadness</div>
+    <div id="surprise">Surprise</div>
+  </div>
+
+  <script>
+    var video = document.querySelector("#videoElement");
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+    if (navigator.getUserMedia) {
+      navigator.getUserMedia({video: true}, handleVideo, videoError);
+    }
+    function handleVideo(stream) {
+      // video.src = window.URL.createObjectURL(stream);
+      video.src = window.URL.createObjectURL(stream);
+    }
+    function videoError(e) {
+      // do something
+    }
+  </script>
 </div>
