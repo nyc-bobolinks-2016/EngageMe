@@ -11,7 +11,7 @@ class GetEmotions
     # json = open("https://api.projectoxford.ai/emotion/v1.0/recognize?url=#{@url}",
     # "Ocp-Apim-Subscription-Key" => "Key").read
     # uri = "https://api.projectoxford.ai/emotion/v1.0/recognize?url=#{@url}"
-    # Net::HTTP.start(host, port) do |http|
+    # Net::HTTP.start(host, 3000) do |http|
     #   request = Net::HTTP::Get.new uri
     #   response = http.request request
   end
