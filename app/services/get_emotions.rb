@@ -1,13 +1,16 @@
-require 'rest-client'
+require 'unirest'
 
 class GetEmotions
   def initialize
-    @url = "https://dbc-engage-me.herokuapp.com/snapshot.jpg"
+    @url = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Batsheva_theater_crowd_in_Tel_Aviv_by_David_Shankbone.jpg/600px-Batsheva_theater_crowd_in_Tel_Aviv_by_David_Shankbone.jpg"
   end
 
   def call
-    client = RestClient::Resource.new('https://api.projectoxford.ai/emotion/v1.0/recognize')
-    response = client.post { "url": 'https://dbc-engage-me.herokuapp.com/snapshot.jpg' }, :content_type => 'application/json', :'Ocp-Apim-Subscription-Key' => Rails.application.secrets.ms_subscription_key
+    response = Unirest.post "https://api.projectoxford.ai/emotion/v1.0/recognize",
+                            headers:{ "Content-Type" => "application/json", "Ocp-Apim-Subscription-Key" => Rails.application.secrets.ms_subscription_key },
+                            { "url": @url }
+    # RestClient::Resource.new('https://api.projectoxford.ai/emotion/v1.0/recognize')
+    # response = client.post { "url": 'https://dbc-engage-me.herokuapp.com/snapshot.jpg' }, :content_type => 'application/json', :'Ocp-Apim-Subscription-Key' => Rails.application.secrets.ms_subscription_key
     # RestClient.post('https://api.projectoxford.ai/emotion/v1.0/recognize', { :payload => { "url": @url } }, { :headers => { :Content_Type => application/json, :Ocp-Apim-Subscription-Key => Rails.application.secrets.ms_subscription_key } }
     # ::Request.execute(method: :post, url: 'https://api.projectoxford.ai/emotion/v1.0/recognize', payload: { "url": @url }, headers: { Content_Type: application/json, Ocp-Apim-Subscription-Key: Rails.application.secrets.ms_subscription_key })
     # post 'https://api.projectoxford.ai/emotion/v1.0/recognize', {content_type :json, accept: :json}, {
