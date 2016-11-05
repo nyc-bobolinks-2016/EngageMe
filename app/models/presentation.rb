@@ -5,6 +5,7 @@ class Presentation < ApplicationRecord
 
   validates :name, :location, :audience, :start_time, :end_time, :user_id, presence: true
   validate :validate_user_id
+  before_save :update_times
 
 
   def validate_user_id
@@ -14,4 +15,8 @@ class Presentation < ApplicationRecord
   def duration
     self.end_time - self.start_time
   end
+  # 
+  # def update_times
+  #   self.start_time =
+  # end
 end

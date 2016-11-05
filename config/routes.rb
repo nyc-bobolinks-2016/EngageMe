@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users do
-    resources :presentations
+    resources :presentations do
+      get 'run', :on => :member
+    end
   end
 
   get '/login' => 'sessions#new'
@@ -9,5 +11,5 @@ Rails.application.routes.draw do
 
   post '/presentations/snapshot' => 'presentations#snapshot'
 
-  root 'users#index'
+  root 'welcome#index'
 end

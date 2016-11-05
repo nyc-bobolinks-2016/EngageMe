@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authorize, :except => [:index, :new]
+  before_action :authorize, :except => [:index, :new, :create]
 
   def new
   end
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
+      @errors = @user.errors.full_messages
       render 'new'
     end
   end
