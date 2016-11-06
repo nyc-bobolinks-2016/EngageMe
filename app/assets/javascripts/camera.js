@@ -15,6 +15,7 @@ $(document).ready(function(){
       type: 'post',
       data: {pic: pic}
     }).done(function(response){
+      console.log(response)
       var emotions = Object.keys(response)
       for(i=0; i < emotions.length; i++){
 	       $('#' + emotions[i]).css('font-size', response[emotions[i]]);

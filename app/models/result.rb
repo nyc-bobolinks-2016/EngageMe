@@ -5,10 +5,11 @@ class Result < ApplicationRecord
   validates :presentation_id, presence: true
 
   def pixels
+    new_hash = {}
     self.emotions_hash.map do |emotion, decimal|
-      self.emotions_hash[emotion] = "#{(10 + (30 * decimal.to_f)).round}px"
+      new_hash[emotion] = "#{(50 + (100 * decimal.to_f)).round}px"
     end
-    emotions_hash
+    new_hash
   end
 
   def emotions_hash
