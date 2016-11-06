@@ -3,6 +3,7 @@
 body {
   height: 100%;
 }
+
 .white-text {
   color: #FFFFFF
 }
@@ -11,15 +12,29 @@ body {
   background-color: black;
 }
 
-#container {
-margin: 0px auto;
-width: 500px;
-height: 375px;
-border: 10px #333 solid;
-}
+// #container {
+// margin: 0px auto;
+// width: 500px;
+// height: 375px;
+// border: 10px #333 solid;
+// }
 
 #videoElement {
-width: 500px;
-height: 375px;
+width: 100%;
 background-color: #666;
+z-index: -1;
+}
+
+#camera {
+  position: relative;
+  width: 100%;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  width: 80%;
+  background-color: #FFF;
+  background-color: rgba(255, 255, 255, 0.8); 
 }
