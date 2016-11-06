@@ -26,10 +26,6 @@ class PresentationsController < ApplicationController
     render :json => new_result(get_emotions)
   end
 
-  def run
-    @presentation = Presentation.find_by(id: params[:id])
-    render 'run'
-  end
 
   private
 

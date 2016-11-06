@@ -1,4 +1,4 @@
-
+rails classify { |e|  }
 User.create(
   username: "Tyler",
   email: "tyler@tyler.com",
