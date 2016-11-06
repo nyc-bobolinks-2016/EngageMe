@@ -8,8 +8,44 @@
   <% end %>
 </ul>
 <% end %>
+<div class="row">
+    <form action=" " method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="name" type="text" class="validate">
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="location" type="text" class="validate">
+          <label for="location">Location</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label>Materialize Select</label>
+          <select>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="submit" class="validate">
+        </div>
+      </div>
 
-<%= form_for([@user, @user.presentations.build]) do |f| %>
+    </form>
+  </div>
+<!-- <%= form_for([@user, @user.presentations.build]) do |f| %>
 
   Name:
   <br>
@@ -25,7 +61,14 @@
   <br>
   Start Time:
   <br>
-    <%= f.date_field :start_time, class: 'datepicker' %>
+  <div class="row">
+             <select>
+                <option value="" disabled selected>Select Fruit</option>
+                <option value="1">Mango</option>
+                <option value="2">Orange</option>
+                <option value="3">Apple</option>
+             </select>
+          </div>
   <br>
   End Time:
   <br>
@@ -38,5 +81,6 @@
   <br>
   <%= f.submit %>
 
-<% end %>
+<% end %> -->
 </div>
+<br>
