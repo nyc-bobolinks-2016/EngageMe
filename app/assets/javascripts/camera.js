@@ -23,7 +23,8 @@ $(document).ready(function(){
       var emotions = Object.keys(response)
       for(i=0; i < emotions.length; i++){
          $('#' + emotions[i]).animate({
-           fontSize: response[emotions[i]]
+           width: response[emotions[i][0]],
+           backgroundColor: response[emotions[i][1]]
          }, 1500 );
        }
     })
