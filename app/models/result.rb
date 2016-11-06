@@ -7,6 +7,7 @@ class Result < ApplicationRecord
   def pixels
     new_hash = {}
     self.emotions_hash.map do |emotion, decimal|
+
       new_hash[emotion] = "#{(50 + (100 * decimal.to_f)).round}px"
     end
     new_hash
@@ -14,14 +15,14 @@ class Result < ApplicationRecord
 
   def emotions_hash
     {
-      "anger": self.anger,
-      "contempt": self.contempt,
-      "disgust": self.fear,
-      "fear": self.disgust,
-      "happiness": self.happiness,
-      "neutral": self.neutral,
-      "sadness": self.sadness,
-      "surprise": self.surprise
+      anger: self.anger,
+      contempt: self.contempt,
+      disgust: self.fear,
+      fear: self.disgust,
+      happiness: self.happiness,
+      neutral: self.neutral,
+      sadness: self.sadness,
+      surprise: self.surprise
     }
   end
 end
