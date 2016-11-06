@@ -31,11 +31,11 @@ class PresentationsController < ApplicationController
 
   def new_result(response)
     new_result = Result.new(presentation_id: params[:id])
-    
+
     new_result.update(ResponseLogic.new.average(response))
     new_result = Result.find_by(presentation_id: params[:id]).last unless new_result.save
 
-    new_result.pixels
+    new_result.width
   end
 
   def get_emotions
