@@ -1,24 +1,57 @@
 
+<div id="camera-container">
   <div id="camera" class="center">
-    <video autoplay="true" id="videoElement"></video>
-    <button id='snap' type="button" value="Send Picture"></button>
-    <canvas id='canvas' width='640' height='480'></canvas>
-    <div class="absolute container">
+    <div id="timer">
       <form name="clockform">
-        <input name="clock" style="font-size: 24; font-weight: bold; height: 35px; text-align: center; width: 174px;" value="00:00:00.00" />
-        <input name="starter" onclick="findTIME()" style="font-weight: bold; width: 97px;" type="button" value="Start/Stop" />
-        <input name="clearer" onclick="clearALL()" type="button" value="Reset" />
+        <input id="clock" name="clock" value="00:00:00.00" />
+        <br>
+        <input id="start" class="waves-effect waves-light green darken-4" name="starter" onclick="findTIME()" type="button" value="Start/Pause"/>
+        <br><br>
+        <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" onclick="clearALL()" type="button" value="End" />
       </form>
-      <div id="anger">Anger</div>
-      <div id="contempt">Contempt</div>
-      <div id="disgust">Disgust</div>
-      <div id="fear">Fear</div>
-      <div id="happiness">Happiness</div>
-      <div id="neutral">Neutral</div>
-      <div id="sadness">Sadness</div>
-      <div id="surprise">Surprise</div>
     </div>
+    <video autoplay="true" id="videoElement"></video>
   </div>
+  <div id="canvas">
+    <canvas id='camera-canvas'></canvas>
+  </div>
+</div>
+<div id="stats">
+  <div id="stats-title" class="center">Current Emotions</div>
+  <div class="emotion">
+    <div class="emotion-title">Anger</div>
+    <div id="anger"> </div>
+  </div>
+  <div class="emotion">
+    <div class="emotion-title">Contempt</div>
+    <div id="contempt"> </div>
+  </div>
+  <div class="emotion">
+    <div class="emotion-title">Disgust</div>
+    <div id="disgust"> </div>
+  </div>
+  <div class="emotion">
+    <div class="emotion-title">Fear</div>
+    <div id="fear"> </div>
+  </div>
+  <div class="emotion">
+    <div class="emotion-title">Happiness</div>
+    <div id="happiness"> </div>
+  </div>
+  <div class="emotion">
+    <div class="emotion-title">Neutral</div>
+    <div id="neutral"> </div>
+  </div>
+  <div class="emotion">
+    <div class="emotion-title">Sadness</div>
+    <div id="sadness"> </div>
+  </div>
+  <div class="emotion">
+    <div class="emotion-title">Surprise</div>
+    <div id="surprise"> </div>
+  </div>
+</div>
+
 
 
 
