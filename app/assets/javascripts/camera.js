@@ -3,9 +3,13 @@ $(document).ready(function(){
   canvas = document.getElementById('canvas');
   context = canvas.getContext('2d');
   video = document.getElementById('videoElement');
-  var presentationOn = false
+  var presentation = false;
+  var calls = 0;
+  var myInterval;
 
   function doAjax(){
+    calls += 1;
+    console.log(calls);
     context.drawImage(video, 0, 0, 640, 480);
     var startingPic = canvas.toDataURL("snapshot/jpg");
     var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
@@ -21,14 +25,32 @@ $(document).ready(function(){
          $('#' + emotions[i]).animate({
            fontSize: response[emotions[i]]
          }, 1500 );
-        doAjax();
        }
     })
   }
+  $('#stop').on('click', function(){
+    var url = (window.location.pathname).split("/run")[0];
 
-  $('#snap').on("click", function(){
+    window.location.href = url;
+  })
+
+  $('#start').on("click", function(event){
     if(presentation){
+      console.log(presentation)
+      console.log("I'm inside true");
+      $('#start').html('resume')
+      presentation = false
+    } else {
+      console.log("I'm inside false");
+      console.log(presentation)
+      $('#start').html('pause')
       presentation = true
-    } else
+      var myInterval = setInterval(function(){
+        if(!presentation){
+          clearInterval(myInterval);
+        }
+        doAjax();
+      }, 3000);
+    }
   })
 })
