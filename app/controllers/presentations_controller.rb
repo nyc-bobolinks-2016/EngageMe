@@ -11,7 +11,7 @@ class PresentationsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @presentation = @user.presentations.create(presentation_params)
-    byebug
+    # byebug
     if @presentation.save
       redirect_to user_presentation_path(@user, @presentation)
     else
@@ -48,7 +48,7 @@ class PresentationsController < ApplicationController
   end
 
   def presentation_params
-    params.require(:presentation).permit(:name, :location, :audience, :start_time, :end_time, :notes)
+    params.permit(:name, :location, :audience, :start_time, :end_time, :notes)
   end
 
 

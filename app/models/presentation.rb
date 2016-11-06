@@ -12,8 +12,8 @@ class Presentation < ApplicationRecord
     errors.add(:user_id, "does not exist") unless User.exists?(self.user_id)
   end
 
-  def duration
-    self.end_time - self.start_time
+  def return_formatted_params(params)
+    
   end
 
   # def update_times
