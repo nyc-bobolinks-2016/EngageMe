@@ -21,20 +21,38 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <label>Materialize Select</label>
+        <div class="input-field col s3">
           <select>
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+            <option value="" disabled selected>Choose A Time:</option>
+            <option value="1">1:00</option>
+            <option value="2">2:00</option>
+            <option value="3">3:00</option>
+            <option value="4">4:00</option>
+            <option value="5">5:00</option>
+            <option value="6">6:00</option>
+            <option value="7">7:00</option>
+            <option value="8">8:00</option>
+            <option value="9">9:00</option>
+            <option value="10">10:00</option>
+            <option value="11">11:00</option>
+            <option value="12">12:00</option>
+          </select>
+        </div>
+        <div class="input-field col s2">
+          <select>
+            <option value="" disabled selected>Period:</option>
+            <option value="1">AM</option>
+            <option value="2">PM</option>
           </select>
         </div>
       </div>
       <div class="row">
+
+      </div>
+      <div class="row">
         <div class="input-field col s12">
           <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
+          <label for="email">Notes</label>
         </div>
       </div>
       <div class="row">
@@ -45,42 +63,6 @@
 
     </form>
   </div>
-<!-- <%= form_for([@user, @user.presentations.build]) do |f| %>
 
-  Name:
-  <br>
-    <%= f.text_field :name %>
-  <br>
-  Location:
-  <br>
-    <%= f.text_field :location %>
-  <br>
-  Audience:
-  <br>
-    <%= f.text_field :audience %>
-  <br>
-  Start Time:
-  <br>
-  <div class="row">
-             <select>
-                <option value="" disabled selected>Select Fruit</option>
-                <option value="1">Mango</option>
-                <option value="2">Orange</option>
-                <option value="3">Apple</option>
-             </select>
-          </div>
-  <br>
-  End Time:
-  <br>
-
-    <%= f.text_field :start_time %>
-  <br>
-  Notes:
-  <br>
-    <%= f.text_area :notes %>
-  <br>
-  <%= f.submit %>
-
-<% end %> -->
 </div>
 <br>
