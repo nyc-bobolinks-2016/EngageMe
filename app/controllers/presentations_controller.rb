@@ -21,10 +21,9 @@ class PresentationsController < ApplicationController
   end
 
   def snapshot
-    base_64_img = params[:pic]
-    CreateImage.new(image: base_64_img).call
-    GetEmotions.new().call
-    ResponseLogic.new.average(response)
+    create_image
+
+    render :json => new_result(get_emotions)
   end
 
   def run
@@ -33,6 +32,23 @@ class PresentationsController < ApplicationController
   end
 
   private
+
+  def new_result(response)
+    new_result = Result.new(presentation_id: params[:id])
+    new_result.update(ResponseLogic.new.average(get_emotions))
+    new_result = Result.find_by(presentation_id: params[:id]).last unless new_result.save
+
+    new_result.pixels
+  end
+
+  def get_emotions
+    JSON.parse(GetEmotions.new.call)
+  end
+
+  def create_image
+    base_64_img = params[:pic]
+    CreateImage.new(image: base_64_img).call
+  end
 
   def presentation_params
     params.require(:presentation).permit(:name, :location, :audience, :start_time, :end_time, :notes)

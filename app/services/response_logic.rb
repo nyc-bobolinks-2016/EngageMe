@@ -1,4 +1,5 @@
 class ResponseLogic
+  attr_reader :avrg
   def initialize
     @avrg = {
       "anger": 0,
@@ -17,10 +18,11 @@ class ResponseLogic
       hash.map do |key, val|
         if key == :scores
           val.keys.each_with_index do |k, i|
-            avrg[k] = (avrg[k] + val[k]).to_f/(i/8 + 1)
+            @avrg[k] = (@avrg[k] + val[k]).to_f/(i/8 + 1)
           end
         end
       end
     end
+    @avrg
   end
 end
