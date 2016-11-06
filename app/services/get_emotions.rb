@@ -4,7 +4,7 @@ class GetEmotions
   def initialize
     @url = "https://dbc-engage-me.herokuapp.com/snapshot.jpg"
     # Test urls for testing on localhost without a camera
-    
+
     # urls = [
     #   'http://www.johnlund.com/Images/Throwing-Tomatoes-At-Speaker.jpg',
     #   'http://image.shutterstock.com/z/stock-photo-novi-sad-serbia-july-audience-infront-of-the-main-stage-at-the-best-european-music-festival-58065856.jpg',

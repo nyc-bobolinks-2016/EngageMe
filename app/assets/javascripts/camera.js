@@ -3,12 +3,12 @@ $(document).ready(function(){
   canvas = document.getElementById('camera-canvas');
   context = canvas.getContext('2d');
   video = document.getElementById('videoElement');
+
   var presentation = false;
   var myInterval;
 
   function doAjax(){
-    context.drawImage(video, 0, 0, 100%, 100%);
-
+    context.drawImage(video, 0, 0, 100, 100 * video.height / video.width);
     var startingPic = canvas.toDataURL("snapshot/jpg");
     var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
     var url = (window.location.pathname).split("/run")[0] + '/snapshot';
@@ -20,9 +20,9 @@ $(document).ready(function(){
     }).done(function(response){
       var emotions = Object.keys(response)
       for(i=0; i < emotions.length; i++){
+        $('#' + emotions[i]).css('background-color', response[emotions[i]][1])
          $('#' + emotions[i]).animate({
-           width: response[emotions[i][0]],
-           backgroundColor: response[emotions[i][1]]
+           width: response[emotions[i]][0]
          }, 1500 );
        }
     })
