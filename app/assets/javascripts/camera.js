@@ -8,8 +8,8 @@ $(document).ready(function(){
     context.drawImage(video, 0, 0, 640, 480);
     var startingPic = canvas.toDataURL("snapshot/jpg");
     var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
-    var url = (window.location.pathname).split("/run") + '/snapshot';
-
+    var url = (window.location.pathname).split("/run")[0] + '/snapshot';
+console.log(url)
     $.ajax({
       url: url,
       type: 'post',
