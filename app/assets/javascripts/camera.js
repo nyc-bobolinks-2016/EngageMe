@@ -6,11 +6,11 @@ $(document).ready(function(){
 
   $('#snap').on("click", function(){
     context.drawImage(video, 0, 0, 640, 480);
-    var pic = canvas.toDataURL("snapshot/jpg");
-    pic = pic.replace(/^data:image\/(png|jpg);base64,/, "")
-
+    var startingPic = canvas.toDataURL("snapshot/jpg");
+    var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
+    var url = (window.location.pathname).split("/run");
     $.ajax({
-      url: '/presentations/snapshot',
+      url: url,
       type: 'post',
       data: {pic: pic}
     }).done(function(response){
