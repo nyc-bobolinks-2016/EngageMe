@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :presentations do
       get 'run', :on => :member
-      post 'snapshot' :on => :member
+      post 'snapshot', :on => :member
     end
   end
 

@@ -8,15 +8,16 @@ $(document).ready(function(){
     context.drawImage(video, 0, 0, 640, 480);
     var startingPic = canvas.toDataURL("snapshot/jpg");
     var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
-    var url = (window.location.pathname).split("/run");
+    var url = (window.location.pathname).split("/run") + '/snapshot';
+
     $.ajax({
       url: url,
       type: 'post',
       data: {pic: pic}
     }).done(function(response){
       var emotions = Object.keys(response)
-      for(i=0; i < keys.length; i++){
-	       $('#' + keys[i]).css('font-size', response[keys[i]]);
+      for(i=0; i < emotions.length; i++){
+	       $('#' + emotions[i]).css('font-size', response[emotions[i]]);
        }
     })
   })
