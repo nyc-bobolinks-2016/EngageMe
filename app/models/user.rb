@@ -8,4 +8,12 @@ class User < ApplicationRecord
   validates :username, :email, presence: true, uniqueness: true
   validates :password, length: { in: 5..12 }
 
+  def current_presentations
+    self.presentations.select { |presentation| presentation.results.count == 0 }
+  end
+
+  def past_presentations
+    self.presentations.select { |presentation| presentation.results.count != 0 }
+  end
+
 end
