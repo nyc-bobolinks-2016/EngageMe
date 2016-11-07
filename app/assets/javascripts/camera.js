@@ -1,14 +1,19 @@
 // Elements for taking the snapshot
 $(document).ready(function(){
-  canvas = document.getElementById('camera-canvas');
-  context = canvas.getContext('2d');
-  video = document.getElementById('videoElement');
+  var canvas = document.getElementById('camera-canvas');
+  var context = canvas.getContext('2d');
+  var video = document.getElementById('videoElement');
 
   var presentation = false;
   var myInterval;
 
+  var videoWidth = video.offsetWidth;
+  var videoHeight = video.offsetHeight;
+
   function doAjax(){
-    context.drawImage(video, 0, 0, 100, 100 * video.height / video.width);
+    canvas.height = videoHeight;
+    canvas.width = videoWidth;
+    context.drawImage(video, 0, 0, videoWidth, videoHeight);
     var startingPic = canvas.toDataURL("snapshot/jpg");
     var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
     var url = (window.location.pathname).split("/run")[0] + '/snapshot';
