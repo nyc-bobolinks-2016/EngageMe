@@ -19,26 +19,26 @@ body {
 
 
 #camera-container {
-  width: 400px;
-  height: 300px;
+  width: 1000px;
+  height: 750px;
   margin: 0px auto;
   position: relative;
   z-index: 1;
 }
 
 #camera {
-  width: 400px;
-  height: 300px;
+  width: 1000px;
+  height: 750px;
   margin: 0px auto;
   position: relative;
   z-index: 2;
 }
 
 #timer {
-  width: 400px;
-  height: 300px;
+  width: 1000px;
+  height: 750px;
   text-align: center;
-  padding-top: 70px;
+  padding-top: 100px;
   position: absolute;
   z-index: 5;
 }
@@ -62,16 +62,16 @@ body {
 }
 
 #videoElement {
-width: 400px;
-height: 300px;
+width: 1000px;
+height: 750px;
 background-color: #666;
 position: absolute;
 z-index: 4;
 }
 
 #camera-canvas {
-  width: 400px;
-  height: 300px;
+  width: 1000px;
+  height: 750px;
   border: 1px solid green;
   position: relative;
   z-index: 3;
@@ -80,21 +80,27 @@ z-index: 4;
 #stats {
   width: 80%;
   margin: 0px auto;
-  position: relative;
+  position: absolute;
+  z-index: 6;
+  border: 1px solid red;
 }
 
 #stats-title {
+  padding-top: 40px;
   font-size: 2em;
   background-color: black;
   color: white;
 }
 
+.emotions {
+  padding-bottom: 50px;
+  background-color: black;
+}
+
 .emotion {
   margin-left: 20px;
   margin-right: 20px;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-top: 50px;
 }
 
 .emotion-title {
