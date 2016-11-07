@@ -27,7 +27,10 @@ class PresentationsController < ApplicationController
 
   def run
     user = User.find(params[:user_id])
+    presentation = Presentation.find_by(id: params[:id], user_id: user.id)
     redirect_to root_path unless user == current_user
+    render :run_error if user.past_presentations.include? presentation
+
   end
 
   def snapshot

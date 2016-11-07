@@ -8,7 +8,10 @@
 <% if @current_presentations != [] %>
   <ul>
     <% @current_presentations.each do |presentation| %>
-      <li><%= link_to presentation.name, user_presentation_path(@user, presentation) %></li>
+      <li>
+        <%= link_to presentation.name, user_presentation_path(@user, presentation) %>
+        <%= link_to 'Run this Presentation', run_user_presentation_path(@user, presentation) %>
+      </li>
   <% end %>
 </ul>
 <% else %>

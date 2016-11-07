@@ -16,3 +16,4 @@
 
 
 //= require presentation
+//= require camera
