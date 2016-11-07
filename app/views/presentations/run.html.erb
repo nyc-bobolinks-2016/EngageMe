@@ -1,18 +1,20 @@
 <div id="camera-container">
-  <div id="camera" class="center">
-    <div id="timer">
-      <form name="clockform">
-        <input id="clock" name="clock" value="00:00:00.00" />
-        <br>
-        <input id="start" class="waves-effect waves-light green darken-4" name="starter" onclick="findTIME()" type="button" value="Start/Pause"/>
-        <br><br>
-        <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" onclick="clearALL()" type="button" value="End" />
-      </form>
-    </div>
-    <video autoplay="true" id="videoElement"></video>
+  <div id="timer">
+    <form name="clockform">
+      <input id="clock" name="clock" value="00:00:00.00" />
+      <br>
+      <input id="start" class="waves-effect waves-light green darken-4" name="starter" onclick="findTIME()" type="button" value="Start/Pause"/>
+      <br><br>
+      <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" onclick="clearALL()" type="button" value="End" />
+    </form>
   </div>
-  <div id="canvas">
+  <div id="camera" class="center">
+    <video autoplay="true" id="videoElement"></video>
     <canvas id='camera-canvas'></canvas>
+
+    <!-- <div id="canvas">
+      <canvas id='camera-canvas'></canvas>
+    </div> -->
   </div>
 </div>
 <div id="stats">
