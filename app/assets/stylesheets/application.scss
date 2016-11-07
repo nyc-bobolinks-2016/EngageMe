@@ -41,6 +41,7 @@ body {
   padding-top: 100px;
   position: absolute;
   z-index: 5;
+  background-color: rbga(0,0,0,0.8)
 }
 
 #clock {
@@ -72,29 +73,26 @@ z-index: 4;
 #camera-canvas {
   width: 1000px;
   height: 750px;
-  border: 1px solid green;
   position: relative;
   z-index: 3;
 }
 
 #stats {
-  width: 80%;
+  width: 100%;
   margin: 0px auto;
   position: absolute;
   z-index: 6;
-  border: 1px solid red;
+  background-color: transparent;
 }
 
 #stats-title {
   padding-top: 40px;
   font-size: 2em;
-  background-color: black;
   color: white;
 }
 
 .emotions {
   padding-bottom: 50px;
-  background-color: black;
 }
 
 .emotion {
