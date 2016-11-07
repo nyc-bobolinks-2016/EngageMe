@@ -3,15 +3,40 @@
 
 <%= link_to 'Create A New Presentation', new_user_presentation_path(@user) %>
 
-<h3>Your Previous Presentations:</h3>
+<h4>Your Current Presentations:</h4>
 
-<% if @presentations %>
+<% if @current_presentations != [] %>
   <ul>
-    <% @presentations.each do |presentation| %>
-      <li><%= link_to presentation.name, user_presentation_path(@user, presentation) %></li>
+    <% @current_presentations.each do |presentation| %>
+      <li>
+        <%= link_to presentation.name, user_presentation_path(@user, presentation) %>
+        <br>
+        <%= link_to 'Run this Presentation', run_user_presentation_path(@user, presentation) %>
+        <br>
+        <%= link_to 'Delete This Presentation', user_presentation_path(@user, presentation),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete this presentation?' } %>
+      </li>
   <% end %>
 </ul>
+<% else %>
+ <p>You currently have no current presentations.</p>
+<% end %>
 
+<h4>Your Previous Presentations:</h4>
+
+<% if @past_presentations != [] %>
+  <ul>
+      <% @past_presentations.each do |presentation| %>
+        <li>
+          <%= link_to presentation.name, user_presentation_path(@user, presentation) %>
+          <br>
+          <%= link_to 'Delete This Presentation', user_presentation_path(@user, presentation),
+                method: :delete,
+                data: { confirm: 'Are you sure you want to delete this presentation?' } %>
+        </li>
+      <% end %>
+  </ul>
 <% else %>
  <p>You currently have no previous presentations.</p>
 <% end %>

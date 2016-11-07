@@ -1,6 +1,10 @@
 <div class="container">
   <h3><%= @presentation.name %></h3>
 
+  <% if @user.presentations.include? @presentation %>
+    <%= link_to 'Run This Presentation', run_user_presentation_path(@user, @presentation) %>
+  <% end %>
+
 <p>Location: <%= @presentation.location %></p>
 <p>Audience: <%= @presentation.audience %></p>
 <p>Start Time: <%= @presentation.start_time %></p>

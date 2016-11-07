@@ -9,78 +9,92 @@
 </ul>
 <% end %>
 <div class="row">
-    <form action=" " method="post" class="col s12">
+    <%= form_for :presentation, url: "/users/#{@user.id}/presentations" do %>
       <div class="row">
         <div class="input-field col s6">
-          <input id="name" type="text" class="validate">
+          <input name="name" type="text" class="validate" required>
           <label for="name">Name</label>
         </div>
         <div class="input-field col s6">
-          <input id="location" type="text" class="validate">
+          <input name="location" type="text" class="validate" required>
           <label for="location">Location</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <label>Materialize Select</label>
-          <select>
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+        <div class="input-field col s6">
+          <input name="audience" type="text" class="validate" required>
+          <label for="audience">Audience</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input name="date" type="date" class="datepicker" value="Select A Date" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <select name="starting_time" required>
+            <option value="" disabled selected>Start Time:</option>
+            <option value="1:00">1:00</option>
+            <option value="2:00">2:00</option>
+            <option value="3:00">3:00</option>
+            <option value="4:00">4:00</option>
+            <option value="5:00">5:00</option>
+            <option value="6:00">6:00</option>
+            <option value="7:00">7:00</option>
+            <option value="8:00">8:00</option>
+            <option value="9:00">9:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+          </select>
+        </div>
+        <div class="input-field col s2">
+          <select name="start_period" required>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <select name="ending_time" required>
+            <option value="" disabled selected>End Time:</option>
+            <option value="1:00">1:00</option>
+            <option value="2:00">2:00</option>
+            <option value="3:00">3:00</option>
+            <option value="4:00">4:00</option>
+            <option value="5:00">5:00</option>
+            <option value="6:00">6:00</option>
+            <option value="7:00">7:00</option>
+            <option value="8:00">8:00</option>
+            <option value="9:00">9:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+          </select>
+        </div>
+        <div class="input-field col s2">
+          <select name="end_period" required>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
           </select>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
+          <input name="notes" type="text" class="validate" required>
+          <label for="notes">Notes</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="submit" class="validate">
+          <input type="submit" class="validate" required>
         </div>
       </div>
 
-    </form>
+    <% end %>
   </div>
-<!-- <%= form_for([@user, @user.presentations.build]) do |f| %>
 
-  Name:
-  <br>
-    <%= f.text_field :name %>
-  <br>
-  Location:
-  <br>
-    <%= f.text_field :location %>
-  <br>
-  Audience:
-  <br>
-    <%= f.text_field :audience %>
-  <br>
-  Start Time:
-  <br>
-  <div class="row">
-             <select>
-                <option value="" disabled selected>Select Fruit</option>
-                <option value="1">Mango</option>
-                <option value="2">Orange</option>
-                <option value="3">Apple</option>
-             </select>
-          </div>
-  <br>
-  End Time:
-  <br>
-
-    <%= f.text_field :start_time %>
-  <br>
-  Notes:
-  <br>
-    <%= f.text_area :notes %>
-  <br>
-  <%= f.submit %>
-
-<% end %> -->
 </div>
 <br>

@@ -18,8 +18,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    redirect_to root_path unless @user == @current_user
-    @presentations = @user.presentations
+    redirect_to root_path unless @user == current_user
+    @current_presentations = @user.current_presentations
+    @past_presentations = @user.past_presentations
   end
 
   private
