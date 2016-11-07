@@ -11,8 +11,12 @@ $(document).ready(function(){
   var videoHeight = video.offsetHeight;
 
   function doAjax(){
-    canvas.offsetHeight = videoHeight;
-    canvas.offsetWidth = videoWidth;
+    canvas.height = videoHeight;
+    canvas.width = videoWidth;
+    console.log('video width' + " " + videoWidth)
+    console.log('canvas width' + " " + canvas.width)
+    console.log('video height' + " " + videoHeight)
+    console.log('video width' + " " + canvas.height)
     context.drawImage(video, 0, 0, videoWidth, videoHeight);
     var startingPic = canvas.toDataURL("snapshot/jpg");
     var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
