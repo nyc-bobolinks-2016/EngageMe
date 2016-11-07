@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  has_many :presentations
+  has_many :presentations, dependent: :destroy
   validates :username, :email, presence: true, uniqueness: true
   validates :password, length: { in: 5..12 }
 

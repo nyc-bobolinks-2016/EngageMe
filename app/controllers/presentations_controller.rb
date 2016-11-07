@@ -39,6 +39,13 @@ class PresentationsController < ApplicationController
     render :json => new_result(get_emotions)
   end
 
+  def destroy
+    user = User.find(params[:user_id])
+    presentation = Presentation.find_by(id: params[:id], user_id: user.id)
+    presentation.destroy
+    redirect_to user_path(user)
+  end
+
 
   private
 
