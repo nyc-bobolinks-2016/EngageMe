@@ -1,15 +1,21 @@
 class PresentationsController < ApplicationController
 
   def show
+    user = User.find(params[:user_id])
     @presentation = Presentation.find(params[:id])
+    puts user.username
+    puts @current_user
+    redirect_to root_path unless user == current_user
   end
 
   def new
     @user = User.find(params[:user_id])
+    redirect_to root_path unless @user == current_user
   end
 
   def create
     @user = User.find(params[:user_id])
+    redirect_to root_path unless @user == current_user
     @presentation = @user.presentations.create(presentation_params)
     # byebug
     if @presentation.save
@@ -18,6 +24,11 @@ class PresentationsController < ApplicationController
       @errors = @presentation.errors.full_messages
       render 'new'
     end
+  end
+
+  def run
+    user = User.find(params[:user_id])
+    redirect_to root_path unless user == current_user
   end
 
   def snapshot
@@ -49,6 +60,7 @@ class PresentationsController < ApplicationController
 
   def presentation_params
     params.permit(:name, :location, :audience, :start_time, :end_time, :notes)
+    ParseNewPresentation.new(params).return_formatted_params
   end
 
 
