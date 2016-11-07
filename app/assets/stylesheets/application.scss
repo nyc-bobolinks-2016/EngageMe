@@ -48,8 +48,8 @@ background-color: #666;
   padding-top: 2.5%;
   width: 95%;
   margin: 0px auto;
-  z-index: 2;
-  position: absolute;
+  // z-index: 2;
+  // position: absolute;
   left: 2.5%;
   border: 1px solid blue;
 }
@@ -60,7 +60,7 @@ background-color: #666;
   width: 95%;
   margin: 0px auto;
   border: 1px solid red;
-  z-index: 1;
+  // z-index: 1;
 }
 
 #camera-canvas {
@@ -72,7 +72,6 @@ background-color: #666;
   width: 95%;
   margin: 0px auto;
   border: 1px solid black;
-  z-index: 2;
   background-color: #e0e0e0;
 }
 
