@@ -10,6 +10,7 @@
     <% @current_presentations.each do |presentation| %>
       <li>
         <%= link_to presentation.name, user_presentation_path(@user, presentation) %>
+        <br>
         <%= link_to 'Run this Presentation', run_user_presentation_path(@user, presentation) %>
       </li>
   <% end %>

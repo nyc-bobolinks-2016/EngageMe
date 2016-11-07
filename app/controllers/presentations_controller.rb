@@ -1,10 +1,10 @@
 class PresentationsController < ApplicationController
 
   def show
-    user = User.find(params[:user_id])
-    @presentation = Presentation.find_by(id: params[:id], user_id: user.id)
+    @user = User.find(params[:user_id])
+    @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
 
-    redirect_to root_path unless user == current_user && @presentation
+    redirect_to root_path unless @user == current_user && @presentation
   end
 
   def new
