@@ -36,8 +36,9 @@ class PresentationsController < ApplicationController
   end
 
   def snapshot
+    @presentation = Presentation.find_by(id: params[:id])
     create_image
-
+    @presentation.update(time_taken: params[:time_taken])
     render :json => new_result(get_emotions)
   end
 

@@ -4,8 +4,10 @@ $(document).ready(function(){
   var context = canvas.getContext('2d');
   var video = document.getElementById('videoElement');
 
-  var presentation = false;
-  var myInterval;
+  var presentation = false,
+      myInterval,
+      timerTime = $('#clock').attr('value'),
+      url = (window.location.pathname).split("/run")[0] + '/snapshot';
 
   var videoWidth = video.offsetWidth;
   var videoHeight = video.offsetHeight;
@@ -15,13 +17,13 @@ $(document).ready(function(){
     canvas.width = videoWidth;
     context.drawImage(video, 0, 0, videoWidth, videoHeight);
     var startingPic = canvas.toDataURL("snapshot/jpg");
-    var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
-    var url = (window.location.pathname).split("/run")[0] + '/snapshot';
+    var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "");
+    timerTime = $('#clock').data('seconds');
 
     $.ajax({
       url: url,
       type: 'post',
-      data: {pic: pic}
+      data: {pic: pic, time_taken: timerTime}
     }).done(function(response){
       var emotions = Object.keys(response)
       for(i=0; i < emotions.length; i++){
@@ -32,18 +34,28 @@ $(document).ready(function(){
        }
     })
   }
+
   $('#stop').on('click', function(){
     var url = (window.location.pathname).split("/run")[0];
-
     window.location.href = url;
   })
 
   $('#start').on("click", function(event){
     if(presentation){
-      $('#start').html('resume')
+      $('#clock').timer('pause');
+      $('#start').attr('value', 'resume');
       presentation = false
     } else {
-      $('#start').html('pause')
+      $('#start').attr('value', 'pause');
+      if(timerTime === 0){
+        $('#clock').timer({
+            seconds: timerTime
+        });
+      } else {
+        $('#clock').timer('resume');
+      }
+
+
       presentation = true
       var myInterval = setInterval(function(){
         if(!presentation){
