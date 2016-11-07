@@ -13,6 +13,8 @@ $(document).ready(function(){
   function doAjax(){
     canvas.height = videoHeight;
     canvas.width = videoWidth;
+    console.log('canvas' + " " + canvas)
+    console.log('video' + " " + video)
     console.log('video width' + " " + videoWidth)
     console.log('canvas width' + " " + canvas.width)
     console.log('video height' + " " + videoHeight)
