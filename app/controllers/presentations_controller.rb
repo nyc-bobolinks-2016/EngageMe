@@ -26,19 +26,16 @@ class PresentationsController < ApplicationController
   end
 
   def run
-    @user = User.find(params[:user_id])
-    @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
-    if @user != current_user
-      redirect_to root_path
-    else
-      render :run_error if @user.past_presentations.include? @presentation
-    end
+    user = User.find(params[:user_id])
+    @presentation = Presentation.find_by(id: params[:id], user_id: user.id)
+
+    redirect_to root_path unless user == current_user
+    render :run_error if user.past_presentations.include? presentation
   end
 
   def snapshot
-    @presentation = Presentation.find_by(id: params[:id])
     create_image
-    @presentation.update(time_taken: params[:time_taken])
+    Presentation.find_by(id: params[:id]).update(time_taken: params[:time_taken])
     render :json => new_result(get_emotions)
   end
 
@@ -67,6 +64,7 @@ class PresentationsController < ApplicationController
 
   def create_image
     base_64_img = params[:pic]
+    something = params[:time_taken]
     CreateImage.new(image: base_64_img).call
   end
 
