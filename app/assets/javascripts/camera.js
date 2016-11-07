@@ -16,7 +16,7 @@ $(document).ready(function(){
     console.log('video width' + " " + videoWidth)
     console.log('canvas width' + " " + canvas.width)
     console.log('video height' + " " + videoHeight)
-    console.log('video width' + " " + canvas.height)
+    console.log('canvas height' + " " + canvas.height)
     context.drawImage(video, 0, 0, videoWidth, videoHeight);
     var startingPic = canvas.toDataURL("snapshot/jpg");
     var pic = startingPic.replace(/^data:image\/(png|jpg);base64,/, "")
