@@ -12,28 +12,28 @@
     <%= form_for :presentation, url: "/users/#{@user.id}/presentations" do %>
       <div class="row">
         <div class="input-field col s6">
-          <input name="name" type="text" class="validate">
+          <input name="name" type="text" class="validate" required>
           <label for="name">Name</label>
         </div>
         <div class="input-field col s6">
-          <input name="location" type="text" class="validate">
+          <input name="location" type="text" class="validate" required>
           <label for="location">Location</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input name="audience" type="text" class="validate">
+          <input name="audience" type="text" class="validate" required>
           <label for="audience">Audience</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input name="date" type="date" class="datepicker" value="Select A Date">
+          <input name="date" type="date" class="datepicker" value="Select A Date" required>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s2">
-          <select name="starting_time">
+          <select name="starting_time" required>
             <option value="" disabled selected>Start Time:</option>
             <option value="1:00">1:00</option>
             <option value="2:00">2:00</option>
@@ -50,7 +50,7 @@
           </select>
         </div>
         <div class="input-field col s2">
-          <select name="start_period">
+          <select name="start_period" required>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
           </select>
@@ -58,7 +58,7 @@
       </div>
       <div class="row">
         <div class="input-field col s2">
-          <select name="ending_time">
+          <select name="ending_time" required>
             <option value="" disabled selected>End Time:</option>
             <option value="1:00">1:00</option>
             <option value="2:00">2:00</option>
@@ -75,7 +75,7 @@
           </select>
         </div>
         <div class="input-field col s2">
-          <select name="end_period">
+          <select name="end_period" required>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
           </select>
@@ -83,13 +83,13 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input name="notes" type="text" class="validate">
+          <input name="notes" type="text" class="validate" required>
           <label for="notes">Notes</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="submit" class="validate">
+          <input type="submit" class="validate" required>
         </div>
       </div>
 
