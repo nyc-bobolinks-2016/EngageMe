@@ -1,56 +1,59 @@
-<div id="camera-container">
-  <div id="timer">
-    <form name="clockform">
-      <input id="clock" name="clock" value="00:00:00.00" />
-      <br>
-      <input id="start" class="waves-effect waves-light green darken-4" name="starter" onclick="findTIME()" type="button" value="Start/Pause"/>
-      <br><br>
-      <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" onclick="clearALL()" type="button" value="End" />
-    </form>
-  </div>
-  <div id="camera" class="center">
-    <video autoplay="true" id="videoElement"></video>
-    <canvas id='camera-canvas'></canvas>
-
-    <!-- <div id="canvas">
+<div id="run-container">
+  <br><br>
+  <div id="camera-container">
+    <div id="timer" class="center">
+      <form name="clockform">
+        <input id="clock" name="clock" value="00:00:00.00" />
+        <br>
+        <input id="start" class="waves-effect waves-light green darken-4" name="starter" onclick="findTIME()" type="button" value="Start/Pause"/>
+        <br><br>
+        <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" onclick="clearALL()" type="button" value="End" />
+      </form>
+      <br><br><br>
+      <div id="stats cols">
+        <div id="stats-title" class="center">Current Emotions</div>
+        <div class="row emotions">
+          <div class="emotion col s12 m5 offset-m1 l5 offset-l1">
+            <div class="emotion-title">Anger</div>
+            <div id="anger"> </div>
+          </div>
+          <div class="emotion col s12 m5 l5">
+            <div class="emotion-title">Contempt</div>
+            <div id="contempt"> </div>
+          </div>
+          <div class="emotion col s12 m5 offset-m1 l5 offset-l1">
+            <div class="emotion-title">Disgust</div>
+            <div id="disgust"> </div>
+          </div>
+          <div class="emotion col s12 m5 l5">
+            <div class="emotion-title">Fear</div>
+            <div id="fear"> </div>
+          </div>
+          <div class="emotion col s12 m5 offset-m1 l5 offset-l1">
+            <div class="emotion-title">Happiness</div>
+            <div id="happiness"> </div>
+          </div>
+          <div class="emotion col s12 m5 l5">
+            <div class="emotion-title">Neutral</div>
+            <div id="neutral"> </div>
+          </div>
+          <div class="emotion col s12 m5 offset-m1 l5 offset-l1">
+            <div class="emotion-title">Sadness</div>
+            <div id="sadness"> </div>
+          </div>
+          <div class="emotion col s12 m5 l5">
+            <div class="emotion-title">Surprise</div>
+            <div id="surprise"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="camera" class="center">
+      <video autoplay="true" id="videoElement"></video>
       <canvas id='camera-canvas'></canvas>
-    </div> -->
+    </div>
   </div>
-</div>
-<div id="stats">
-  <div id="stats-title" class="center">Current Emotions</div>
-  <div class="emotion">
-    <div class="emotion-title">Anger</div>
-    <div id="anger"> </div>
-  </div>
-  <div class="emotion">
-    <div class="emotion-title">Contempt</div>
-    <div id="contempt"> </div>
-  </div>
-  <div class="emotion">
-    <div class="emotion-title">Disgust</div>
-    <div id="disgust"> </div>
-  </div>
-  <div class="emotion">
-    <div class="emotion-title">Fear</div>
-    <div id="fear"> </div>
-  </div>
-  <div class="emotion">
-    <div class="emotion-title">Happiness</div>
-    <div id="happiness"> </div>
-  </div>
-  <div class="emotion">
-    <div class="emotion-title">Neutral</div>
-    <div id="neutral"> </div>
-  </div>
-  <div class="emotion">
-    <div class="emotion-title">Sadness</div>
-    <div id="sadness"> </div>
-  </div>
-  <div class="emotion">
-    <div class="emotion-title">Surprise</div>
-    <div id="surprise"> </div>
-  </div>
+  <br><br>
 </div>
 
 <script>
