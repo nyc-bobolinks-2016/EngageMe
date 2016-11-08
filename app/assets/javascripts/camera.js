@@ -26,11 +26,13 @@ $(document).ready(function(){
         time_taken: $('#clock').data('seconds')
       }
     }).done(function(response){
-      var emotions = Object.keys(response)
+      var emotions_hash = response.emotions
+      var emotions = Object.keys(emotions_hash)
       for(i=0; i < emotions.length; i++){
-        $('#' + emotions[i]).css('opacity', response[emotions[i]][1])
+        $('#' + emotions[i]).css('opacity', emotions_hash[emotions[i]][1])
+        $('#faces').text(response.faces + ' faces detected')
         $('#' + emotions[i]).animate({
-          width: response[emotions[i]][0]
+          width: emotions_hash[emotions[i]][0]
         }, 1500 );
        }
     })

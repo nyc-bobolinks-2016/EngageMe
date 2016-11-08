@@ -26,7 +26,7 @@ class PresentationsController < ApplicationController
   def run
     @user = User.find(params[:user_id])
     @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
-  
+
 
     if @user != current_user
       redirect_to root_path
@@ -41,6 +41,7 @@ class PresentationsController < ApplicationController
 
     create_image
     render :json => new_result(get_emotions)
+
   end
 
   def destroy
@@ -67,7 +68,7 @@ class PresentationsController < ApplicationController
     new_result.update(ResponseLogic.new.average(response))
     new_result = Result.find_by(presentation_id: params[:id]).last unless new_result.save
 
-    new_result.width
+    {emotions: new_result.width, faces: response.length} 
   end
 
   def get_emotions
