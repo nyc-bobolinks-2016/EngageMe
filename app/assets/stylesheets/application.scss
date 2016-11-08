@@ -1,7 +1,13 @@
 @import "materialize";
 
 body {
-  height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .white-text {
@@ -146,4 +152,14 @@ z-index: 4;
   background-color: white;
   height: 20px;
   width: 100%;
+}
+
+.data-table {
+  height: 100px;
+}
+
+.presentation-td {
+  vertical-align: top;
+  height: 20px;
+  width: 50%;
 }
