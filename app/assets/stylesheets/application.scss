@@ -6,6 +6,10 @@ body {
   flex-direction: column;
 }
 
+.landing-page {
+  background-color: #000;
+}
+
 main {
   flex: 1 0 auto;
 }
@@ -195,7 +199,8 @@ z-index: 4;
 }
 
 .black-background {
-  min-height: 20vh;
+  // min-height: 30vh;
+  height: 100%;
 }
 
 #faces {
