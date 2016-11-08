@@ -6,8 +6,9 @@ class CreatePresentations < ActiveRecord::Migration[5.0]
       t.string :audience, null: false
       t.datetime :start_time, null: false
       t.datetime :end_time, null: false
-      t.string :time_taken
+      t.integer :time_taken, default: 0, null: false
       t.text :notes
+      t.boolean :finished, default: false, null: false
       t.references :user, index: true
 
       t.timestamps(null: false)

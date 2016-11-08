@@ -1,5 +1,4 @@
 class PresentationsController < ApplicationController
-
   def show
     @user = User.find(params[:user_id])
     @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
@@ -16,7 +15,6 @@ class PresentationsController < ApplicationController
     @user = User.find(params[:user_id])
     redirect_to root_path unless @user == current_user
     @presentation = @user.presentations.create(presentation_params)
-    # byebug
     if @presentation.save
       redirect_to user_presentation_path(@user, @presentation)
     else
@@ -25,26 +23,30 @@ class PresentationsController < ApplicationController
     end
   end
 
+  def update
+    @presentation = Presentation.find_by(id: params[:id])
+    @presentation.update(finished: true)
+  end
+
   def run
-    @user = User.find(params[:user_id])
-    @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
-    if @user != current_user
-      redirect_to root_path
-    else
-      render :run_error if @user.past_presentations.include? @presentation
-    end
+    user = User.find(params[:user_id])
+    @presentation = Presentation.find_by(id: params[:id], user_id: user.id)
+
+    redirect_to root_path unless user == current_user
+    render :run_error if @presentation.finished
   end
 
   def snapshot
-    create_image
+    presentation = Presentation.find_by(id: params[:id])
+    presentation.update(time_taken: params[:time_taken])
 
+    create_image
     render :json => new_result(get_emotions)
   end
 
   def destroy
-    user = User.find(params[:user_id])
-    presentation = Presentation.find_by(id: params[:id], user_id: user.id)
-    presentation.destroy
+    current_presentation.destroy
+
     redirect_to user_path(user)
   end
 
@@ -66,6 +68,7 @@ class PresentationsController < ApplicationController
 
   def create_image
     base_64_img = params[:pic]
+    something = params[:time_taken]
     CreateImage.new(image: base_64_img).call
   end
 
@@ -73,6 +76,4 @@ class PresentationsController < ApplicationController
     params.permit(:name, :location, :audience, :start_time, :end_time, :notes)
     ParseNewPresentation.new(params).return_formatted_params
   end
-
-
 end
