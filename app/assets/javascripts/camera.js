@@ -28,10 +28,10 @@ $(document).ready(function(){
     }).done(function(response){
       var emotions = Object.keys(response)
       for(i=0; i < emotions.length; i++){
-        $('#' + emotions[i]).css('background-color', response[emotions[i]][1])
-         $('#' + emotions[i]).animate({
-           width: response[emotions[i]][0]
-         }, 1500 );
+        $('#' + emotions[i]).css('opacity', response[emotions[i]][1])
+        $('#' + emotions[i]).animate({
+          width: response[emotions[i]][0]
+        }, 1500 );
        }
     })
   }

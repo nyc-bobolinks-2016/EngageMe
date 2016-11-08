@@ -6,9 +6,9 @@
       <form name="clockform">
         <p id="clock" name="clock" value='<%= @presentation.time_taken %>'><%= @presentation.time_pretty %></p>
         <br>
-        <input id="start" class="waves-effect waves-light green darken-4" name="starter" onclick="findTIME()" type="button" value="Start/Pause"/>
+        <input id="start" class="waves-effect waves-light green darken-4" name="starter" type="button" value="Start/Pause"/>
         <br><br>
-        <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" onclick="clearALL()" type="button" value="End" />
+        <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" type="button" value="End" />
       </form>
       <br><br><br>
       <div id="stats">

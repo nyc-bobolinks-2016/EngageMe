@@ -15,9 +15,10 @@ class Result < ApplicationRecord
 
   def width
     new_hash = {}
-    colors = ['green', 'red', 'blue', 'orange']
+    # colors = ['green', 'red', 'blue', 'orange']
     self.emotions_hash.map do |emotion, decimal|
-      new_hash[emotion] = ["#{(decimal * 100).round}%", "#{colors[(((decimal - 0.00000001) * 100)/25).floor]}"]
+      # new_hash[emotion] = ["#{(decimal * 100).round}%", "#{colors[(((decimal - 0.00000001) * 100)/25).floor]}"]
+      new_hash[emotion] = ["#{(decimal * 100).round}%", "#{ (0.3 + (decimal * 0.7)).round(1) }"]
     end
     new_hash
   end
