@@ -12,7 +12,7 @@
           <tr>
               <th data-field="id">Name</th>
               <th data-field="name">Location</th>
-              <th data-field="price">Start Time:</th>
+              <th colspan="3" data-field="price">Start Date:</th>
           </tr>
         </thead>
 
@@ -22,6 +22,14 @@
               <td><%= presentation.name %></td>
               <td><%= presentation.location %></td>
               <td><%= presentation.start_time.to_date %></td>
+              <td class="right-button">
+                <%= link_to 'Delete', user_presentation_path(@user, presentation),
+                    method: :delete,
+                    data: { confirm: 'Are you sure you want to delete this presentation?' }, class: "waves-effect waves-light btn"%>
+              </td>
+              <td class="right-button">
+                <%= link_to 'Run', run_user_presentation_path(@user, presentation), class: "waves-effect waves-light btn"%>
+              </td>
           </tr>
           <% end %>
 
