@@ -33,7 +33,7 @@ $(document).ready(function(){
         $('#faces').text(response.faces + ' faces detected')
         $('#' + emotions[i]).animate({
           width: emotions_hash[emotions[i]][0]
-        }, 1500 );
+        }, 1000 );
        }
     })
   }
