@@ -23,11 +23,6 @@ class PresentationsController < ApplicationController
     end
   end
 
-  def update
-    @presentation = Presentation.find_by(id: params[:id])
-    @presentation.update(finished: true)
-  end
-
   def run
     user = User.find(params[:user_id])
     @presentation = Presentation.find_by(id: params[:id], user_id: user.id)
@@ -48,6 +43,14 @@ class PresentationsController < ApplicationController
     current_presentation.destroy
 
     redirect_to user_path(user)
+  end
+
+  def update
+    @user = current_user
+    @presentation = Presentation.find_by(id: params[:id])
+    @presentation.update(finished: true)
+
+    render :js => "window.location = '#{user_presentation_path}'"
   end
 
 
