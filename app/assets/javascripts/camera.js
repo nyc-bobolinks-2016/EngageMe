@@ -26,17 +26,20 @@ $(document).ready(function(){
         time_taken: $('#clock').data('seconds')
       }
     }).done(function(response){
-      var emotions = Object.keys(response)
+      var emotions_hash = response.emotions
+      var emotions = Object.keys(emotions_hash)
       for(i=0; i < emotions.length; i++){
-        $('#' + emotions[i]).css('opacity', response[emotions[i]][1])
+        $('#' + emotions[i]).css('opacity', emotions_hash[emotions[i]][1])
+        $('#faces').text(response.faces + ' faces detected')
         $('#' + emotions[i]).animate({
-          width: response[emotions[i]][0]
+          width: emotions_hash[emotions[i]][0]
         }, 1500 );
        }
     })
   }
 
   $('#stop').on('click', function(){
+    $('#faces').hide();
     var url = (window.location.pathname).split("/run")[0];
     $.ajax({
       url: url,
@@ -49,16 +52,16 @@ $(document).ready(function(){
       timerTime = $('#clock').data('seconds');
       $('#clock').timer('remove');
       $('#start').attr('value', 'resume');
+      $('#faces').hide();
       presentation = false
     } else {
 
       $('#start').attr('value', 'pause');
-
+      $('#faces').show().text("Detecting Faces...");
       $('#clock').timer({
         format: '%H:%M:%S',
         seconds: timerTime
       });
-
       presentation = true
       var myInterval = setInterval(function(){
         if(!presentation){

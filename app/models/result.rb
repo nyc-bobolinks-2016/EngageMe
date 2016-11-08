@@ -35,4 +35,5 @@ class Result < ApplicationRecord
       surprise: self.surprise
     }
   end
+
 end
