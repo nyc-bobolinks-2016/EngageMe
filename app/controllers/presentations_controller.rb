@@ -75,7 +75,6 @@ class PresentationsController < ApplicationController
 
   def create_image
     base_64_img = params[:pic]
-    something = params[:time_taken]
     CreateImage.new(image: base_64_img).call
   end
 
