@@ -17,3 +17,4 @@
 
 //= require presentation
 //= require camera
+//= require_tree

@@ -16,16 +16,17 @@ ActiveRecord::Schema.define(version: 20161103195130) do
   enable_extension "plpgsql"
 
   create_table "presentations", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "location",   null: false
-    t.string   "audience",   null: false
-    t.datetime "start_time", null: false
-    t.datetime "end_time",   null: false
-    t.string   "time_taken"
+    t.string   "name",                       null: false
+    t.string   "location",                   null: false
+    t.string   "audience",                   null: false
+    t.datetime "start_time",                 null: false
+    t.datetime "end_time",                   null: false
+    t.integer  "time_taken", default: 0,     null: false
     t.text     "notes"
+    t.boolean  "finished",   default: false, null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["user_id"], name: "index_presentations_on_user_id", using: :btree
   end
 

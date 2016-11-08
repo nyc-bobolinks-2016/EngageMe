@@ -26,7 +26,7 @@ User.all.each do |user|
       audience: Faker::University.name,
       start_time: Time.now,
       end_time: Time.now + 3000,
-      time_taken: "00:50:00",
+      time_taken: 23534,
       notes: Faker::Lorem.paragraph
       )
   end

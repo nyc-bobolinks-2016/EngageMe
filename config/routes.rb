@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get 'run', :on => :member
       post 'snapshot', :on => :member
     end
+    resources :presentation, only: :update
   end
 
   get '/login' => 'sessions#new'
