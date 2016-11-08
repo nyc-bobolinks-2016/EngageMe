@@ -5,7 +5,7 @@ $(document).ready(function(){
   var video = document.getElementById('videoElement');
   var presentation = false,
       myInterval,
-      timerTime = parseInt($('#clock').text()),
+      timerTime = parseInt($('#clock').attr('value')),
       url = (window.location.pathname).split("/run")[0] + '/snapshot';
 
   var videoWidth = video.offsetWidth;

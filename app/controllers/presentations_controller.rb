@@ -15,13 +15,16 @@ class PresentationsController < ApplicationController
     @user = User.find(params[:user_id])
     redirect_to root_path unless @user == current_user
     @presentation = @user.presentations.create(presentation_params)
-    # byebug
     if @presentation.save
       redirect_to user_presentation_path(@user, @presentation)
     else
       @errors = @presentation.errors.full_messages
       render 'new'
     end
+  end
+
+  def edit
+    current_presentation =
   end
 
   def run
@@ -35,8 +38,8 @@ class PresentationsController < ApplicationController
   def snapshot
     presentation = Presentation.find_by(id: params[:id])
     presentation.update(time_taken: params[:time_taken])
+    
     create_image
-
     render :json => new_result(get_emotions)
   end
 
