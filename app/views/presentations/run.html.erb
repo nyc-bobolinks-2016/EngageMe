@@ -4,7 +4,7 @@
     <div id="timer" class="center">
       <br><br>
       <form name="clockform">
-        <p id="clock" name="clock"><%= @time_taken %><%= @presentation.time_taken %></p>
+        <p id="clock" name="clock"><%= @presentation.time_taken.to_i %></p>
         <br>
         <input id="start" class="waves-effect waves-light green darken-4" name="starter" onclick="findTIME()" type="button" value="Start/Pause"/>
         <br><br>

@@ -1,5 +1,4 @@
 class PresentationsController < ApplicationController
-
   def show
     @user = User.find(params[:user_id])
     @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
@@ -34,15 +33,16 @@ class PresentationsController < ApplicationController
   end
 
   def snapshot
+    presentation = Presentation.find_by(id: params[:id])
+    presentation.update(time_taken: params[:time_taken])
     create_image
-    Presentation.find_by(id: params[:id]).update(time_taken: params[:time_taken])
+
     render :json => new_result(get_emotions)
   end
 
   def destroy
-    user = User.find(params[:user_id])
-    presentation = Presentation.find_by(id: params[:id], user_id: user.id)
-    presentation.destroy
+    current_presentation.destroy
+
     redirect_to user_path(user)
   end
 
@@ -72,6 +72,4 @@ class PresentationsController < ApplicationController
     params.permit(:name, :location, :audience, :start_time, :end_time, :notes)
     ParseNewPresentation.new(params).return_formatted_params
   end
-
-
 end
