@@ -26,6 +26,7 @@ class PresentationsController < ApplicationController
   def run
     @user = User.find(params[:user_id])
     @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
+  
 
     if @user != current_user
       redirect_to root_path

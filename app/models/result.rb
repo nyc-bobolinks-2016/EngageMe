@@ -35,8 +35,4 @@ class Result < ApplicationRecord
       surprise: self.surprise
     }
   end
-
-  def faces
-    '54'
-  end
 end
