@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-  <body>
+  <body class="<%= 'landing-page' if controller.controller_name == 'welcome' %>">
     <nav class="black" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="/" class="brand-logo">EngageMe</a>
