@@ -9,11 +9,11 @@ class User < ApplicationRecord
   validates :password, length: { in: 5..12 }
 
   def current_presentations
-    self.presentations.select { |presentation| presentation.results.count == 0 }
+    self.presentations.select { |presentation| presentation.finished == false }
   end
 
   def past_presentations
-    self.presentations.select { |presentation| presentation.results.count != 0 }
+    self.presentations.select { |presentation| presentation.finished == true }
   end
 
 end

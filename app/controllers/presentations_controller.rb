@@ -24,13 +24,13 @@ class PresentationsController < ApplicationController
   end
 
   def run
-    user = User.find(params[:user_id])
-    @presentation = Presentation.find_by(id: params[:id], user_id: user.id)
+    @user = User.find(params[:user_id])
+    @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
 
     if @user != current_user
       redirect_to root_path
     else
-      render :run_error if @user.past_presentations.include? @presentation
+      render :run_error if @presentation.finished
     end
   end
 

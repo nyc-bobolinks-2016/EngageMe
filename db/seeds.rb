@@ -27,7 +27,8 @@ User.all.each do |user|
       start_time: Time.now,
       end_time: Time.now + 3000,
       time_taken: 23534,
-      notes: Faker::Lorem.paragraph
+      notes: Faker::Lorem.paragraph,
+      finished: true
       )
   end
 end
