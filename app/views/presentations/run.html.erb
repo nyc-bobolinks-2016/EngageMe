@@ -2,7 +2,6 @@
   <br><br>
   <div id="camera-container">
     <div id="timer" class="center">
-      <br><br>
       <form name="clockform">
         <p id="clock" name="clock" value='<%= @presentation.time_taken %>'><%= @presentation.time_pretty %></p>
         <br>
@@ -10,42 +9,45 @@
         <br><br>
         <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" type="button" value="End" />
       </form>
-      <br><br><br>
       <div id="stats">
         <div id="stats-title" class="center">Current Emotions</div>
         <div class="row emotions">
-          <div class="emotion col s12 m5 offset-m1 l5 offset-l1">
-            <div class="emotion-title">Anger</div>
-            <div id="anger"> </div>
-          </div>
-          <div class="emotion col s12 m5 l5">
-            <div class="emotion-title">Contempt</div>
-            <div id="contempt"> </div>
-          </div>
-          <div class="emotion col s12 m5 offset-m1 l5 offset-l1">
-            <div class="emotion-title">Disgust</div>
-            <div id="disgust"> </div>
-          </div>
-          <div class="emotion col s12 m5 l5">
-            <div class="emotion-title">Fear</div>
-            <div id="fear"> </div>
-          </div>
-          <div class="emotion col s12 m5 offset-m1 l5 offset-l1">
-            <div class="emotion-title">Happiness</div>
-            <div id="happiness"> </div>
-          </div>
-          <div class="emotion col s12 m5 l5">
-            <div class="emotion-title">Neutral</div>
-            <div id="neutral"> </div>
-          </div>
-          <div class="emotion col s12 m5 offset-m1 l5 offset-l1">
-            <div class="emotion-title">Sadness</div>
-            <div id="sadness"> </div>
-          </div>
-          <div class="emotion col s12 m5 l5">
-            <div class="emotion-title">Surprise</div>
-            <div id="surprise"> </div>
-          </div>
+          <table>
+            <tbody>
+              <tr class="emotion">
+                <td class="emotion-title">Anger</td>
+                <td class="emotion-percentage"><div id="anger"></div></td>
+              </tr>
+              <tr class="emotion">
+                <td class="emotion-title">Contempt</td>
+                <td class="emotion-percentage"><div id="contempt"></div></td>
+              </tr>
+              <tr class="emotion">
+                <td class="emotion-title">Disgust</td>
+                <td class="emotion-percentage"><div id="disgust"></div></td>
+              </tr>
+              <tr class="emotion">
+                <td class="emotion-title">Fear</td>
+                <td class="emotion-percentage"><div id="fear"></div></td>
+              </tr>
+              <tr class="emotion">
+                <td class="emotion-title">Happiness</td>
+                <td class="emotion-percentage"><div id="happiness"></div></td>
+              </tr>
+              <tr class="emotion">
+                <td class="emotion-title">Neutral</td>
+                <td class="emotion-percentage"><div id="neutral"></div></td>
+              </tr>
+              <tr class="emotion">
+                <td class="emotion-title">Sadness</td>
+                <td class="emotion-percentage"><div id="sadness"></div></td>
+              </tr>
+              <tr class="emotion">
+                <td class="emotion-title">Surprise</td>
+                <td class="emotion-percentage"><div id="surprise"></div></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

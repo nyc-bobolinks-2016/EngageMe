@@ -44,7 +44,7 @@ main {
   width: 1000px;
   height: 750px;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 35px;
   position: absolute;
   z-index: 5;
   background-color: black;
@@ -93,65 +93,85 @@ z-index: 4;
 }
 
 #stats-title {
-  padding-top: 40px;
+  padding-top: 10px;
   font-size: 2em;
   color: white;
 }
 
 .emotions {
-  padding-bottom: 50px;
+  width: 60%;
 }
 
 .emotion {
-  margin-left: 20px;
-  margin-right: 20px;
-  padding-top: 50px;
+  border: 1px solid white;
 }
 
 .emotion-title {
   font-size: 1.5em;
   color: white;
+  width: 30%;
+  text-align: right;
+}
+
+.emotion-percentage {
+  width: 70%;
+  padding-right: 75px;
 }
 
 #anger {
+  width: 100%;
   background-color: red;
-  height: 20px;
+  opacity: 1;
+  height: 30px;
 }
 
 #contempt {
+  width: 100%;
   background-color: purple;
-  height: 20px;
+  opacity: 1;
+  height: 30px;
 }
 
 #disgust {
+  width: 100%;
   background-color: brown;
-  height: 20px;
+  opacity: 1;
+  height: 30px;
 }
 
 #fear {
+  width: 100%;
   background-color: darkblue;
-  height: 20px;
+  opacity: 1;
+  height: 30px;
 }
 
 #happiness {
+  width: 100%;
   background-color: yellow;
-  height: 20px;
+  opacity: 1;
+  height: 30px;
 }
 
 #neutral {
+  width: 100%;
   background-color: green;
-  height: 20px;
+  opacity: 1;
+  height: 30px;
 }
 
 #sadness {
+  width: 100%;
   background-color: lightblue;
-  height: 20px;
+  opacity: 1;
+  height: 30px;
 }
 
 #surprise {
-  background-color: orange;
-  height: 20px;
   width: 100%;
+  background-color: orange;
+  opacity: 1;
+  height: 30px;
 }
 
 .data-table {
