@@ -6,12 +6,10 @@
   </p>
 
   <%= form_tag '/login' do %>
-
     <%= label_tag("Email:") %>
     <%= text_field_tag :email %>
     <%= label_tag("Password:") %>
     <%= password_field_tag :password %>
-    <%= submit_tag "Submit" %>
-
+    <%= submit_tag "Submit", :class => "btn-large waves-effect waves-light indigo darken-4" %>
   <% end %>
 </div>

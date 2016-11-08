@@ -2,7 +2,7 @@
   <h4><%= @presentation.name %></h4>
 
   <% if @user.current_presentations.include? @presentation %>
-    <%= link_to 'Run This Presentation', run_user_presentation_path(@user, @presentation) %>
+    <%= link_to 'Run This Presentation', run_user_presentation_path(@user, @presentation), :class => "btn-large waves-effect waves-light orange darken-4" %>
   <% end %>
 
 <table class="data-table bordered">
@@ -17,15 +17,15 @@
           </tr>
           <tr>
             <td class="presentation-td">Start Time:</td>
-            <td class="presentation-td"><%= @presentation.start_time %></td>
+            <td class="presentation-td"><%= @presentation.start %></td>
           </tr>
           <tr>
             <td class="presentation-td">End Time:</td>
-            <td class="presentation-td"><%= @presentation.end_time %></td>
+            <td class="presentation-td"><%= @presentation.end %></td>
           </tr>
           <tr>
             <td class="presentation-td">Time Taken:</td>
-            <td class="presentation-td"><%= @presentation.time_taken %></td>
+            <td class="presentation-td"><%= @presentation.time_pretty %></td>
           </tr>
           <tr>
             <td class="presentation-td">Notes:</td>
