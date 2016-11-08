@@ -2,7 +2,10 @@ class PresentationsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
-
+    @data = @presentation.format_line_graph_data
+    @options = {
+      borderWidth: 1
+    }
     redirect_to root_path unless @user == current_user && @presentation
   end
 
@@ -41,13 +44,11 @@ class PresentationsController < ApplicationController
 
     create_image
     render :json => new_result(get_emotions)
-
   end
 
   def destroy
     user = User.find(params[:user_id])
     current_presentation.destroy
-
     redirect_to user_path(user)
   end
 
@@ -68,7 +69,7 @@ class PresentationsController < ApplicationController
     new_result.update(ResponseLogic.new.average(response))
     new_result = Result.find_by(presentation_id: params[:id]).last unless new_result.save
 
-    {emotions: new_result.width, faces: response.length} 
+    {emotions: new_result.width, faces: response.length}
   end
 
   def get_emotions
