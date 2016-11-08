@@ -17,4 +17,5 @@
 
 //= require presentation
 //= require camera
+//= require Chart.bundle.min
 //= require_tree

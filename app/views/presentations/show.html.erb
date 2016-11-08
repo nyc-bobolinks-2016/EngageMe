@@ -32,8 +32,16 @@
             <td class="presentation-td"><%= @presentation.notes %></td>
           </tr>
         </tbody>
-      </table>
-
+</table>
 <%= link_to 'Return to Index', user_path(@presentation.user), class: "something"%>
 
+<%= line_chart           @data, @options %>
+<%= bar_chart            @data, @options %>
+<%= horizontal_bar_chart @data, @options %>
+<%= radar_chart          @data, @options %>
+<%= polar_area_chart     @data, @options %>
+<%= pie_chart            @data, @options %>
+<%= doughnut_chart       @data, @options %>
+<%= bubble_chart         @data, @options %>
+<%= scatter_chart        @data, @options %>
 </div>

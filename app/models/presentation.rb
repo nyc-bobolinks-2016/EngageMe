@@ -23,4 +23,70 @@ class Presentation < ApplicationRecord
 
     "#{hours}:#{minutes}:#{seconds}"
   end
+
+  def format_line_graph_data
+    data = {
+        # labels are emotions
+        labels: [],
+        datasets: [
+          {
+              label: "anger",
+              backgroundColor: "rgba(220,220,220,0.2)",
+              borderColor: "red",
+              # data are percentages
+              data: []
+          },
+          {
+              label: "contempt",
+              backgroundColor: "rgba(151,187,205,0.2)",
+              borderColor: "purple",
+              data: []
+          },
+          {
+              label: "disgust",
+              backgroundColor: "rgba(151,187,205,0.2)",
+              borderColor: "brown",
+              data: []
+          },
+          {
+              label: "fear",
+              backgroundColor: "rgba(151,187,205,0.2)",
+              borderColor: "darkblue",
+              data: []
+          },
+          {
+              label: "happiness",
+              backgroundColor: "rgba(151,187,205,0.2)",
+              borderColor: "yellow",
+              data: []
+          },
+          {
+              label: "neutral",
+              backgroundColor: "rgba(151,187,205,0.2)",
+              borderColor: "green",
+              data: []
+          },
+          {
+              label: "sadness",
+              backgroundColor: "rgba(151,187,205,0.2)",
+              borderColor: "lightblue",
+              data: []
+          },
+          {
+              label: "surprise",
+              backgroundColor: "rgba(151,187,205,0.2)",
+              borderColor: "orange",
+              data: []
+          }
+        ]
+      }
+
+      results = self.results
+      results.each_with_index do |r, j|
+        data[:labels] << "#{j * 3}s"
+        r.emotions_hash.each_with_index {|k, i| data[:datasets][i][:data] << k[1].round(3)}
+      end
+
+      data
+  end
 end
