@@ -1,17 +1,39 @@
 <div class="container">
-  <h3><%= @presentation.name %></h3>
+  <h4><%= @presentation.name %></h4>
 
-  <% if @user.presentations.include? @presentation %>
+  <% if @user.current_presentations.include? @presentation %>
     <%= link_to 'Run This Presentation', run_user_presentation_path(@user, @presentation) %>
   <% end %>
 
-<p>Location: <%= @presentation.location %></p>
-<p>Audience: <%= @presentation.audience %></p>
-<p>Start Time: <%= @presentation.start_time %></p>
-<p>End Time: <%= @presentation.end_time %></p>
-<p>Time Taken: <%= @presentation.time_taken %></p>
-<p>Notes: <%= @presentation.notes %></p>
+<table class="data-table bordered">
+        <tbody>
+          <tr>
+            <td class="presentation-td">Location:</td>
+            <td class="presentation-td"><%= @presentation.location %></td>
+          </tr>
+          <tr>
+            <td class="presentation-td">Audience:</td>
+            <td class="presentation-td"><%= @presentation.audience %></td>
+          </tr>
+          <tr>
+            <td class="presentation-td">Start Time:</td>
+            <td class="presentation-td"><%= @presentation.start_time %></td>
+          </tr>
+          <tr>
+            <td class="presentation-td">End Time:</td>
+            <td class="presentation-td"><%= @presentation.end_time %></td>
+          </tr>
+          <tr>
+            <td class="presentation-td">Time Taken:</td>
+            <td class="presentation-td"><%= @presentation.time_taken %></td>
+          </tr>
+          <tr>
+            <td class="presentation-td">Notes:</td>
+            <td class="presentation-td"><%= @presentation.notes %></td>
+          </tr>
+        </tbody>
+      </table>
 
-<%= link_to 'Back', user_path(@presentation.user), class: "something"%>
+<%= link_to 'Return to Index', user_path(@presentation.user), class: "something"%>
 
 </div>
