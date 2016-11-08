@@ -223,7 +223,18 @@ class Presentation < ApplicationRecord
         data[:labels] << "#{j * 3}s"
         r.emotions_hash.each_with_index {|k, i| data[:datasets][i][:data] << k[1].round(3)}
       end
-
       data
+    end
+
+  def date_given
+    self.end_time.strftime("%D")
+  end
+
+  def start
+    self.end_time.strftime("%H:%M %p")
+  end
+
+  def end
+    self.end_time.strftime("%H:%M %p")
   end
 end
