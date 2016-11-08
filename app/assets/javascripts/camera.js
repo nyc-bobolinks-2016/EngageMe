@@ -37,6 +37,7 @@ $(document).ready(function(){
   }
 
   $('#stop').on('click', function(){
+    $('#faces').hide();
     var url = (window.location.pathname).split("/run")[0];
     $.ajax({
       url: url,
@@ -49,16 +50,16 @@ $(document).ready(function(){
       timerTime = $('#clock').data('seconds');
       $('#clock').timer('remove');
       $('#start').attr('value', 'resume');
+      $('#faces').hide();
       presentation = false
     } else {
 
       $('#start').attr('value', 'pause');
-
+      $('#faces').show();
       $('#clock').timer({
         format: '%H:%M:%S',
         seconds: timerTime
       });
-
       presentation = true
       var myInterval = setInterval(function(){
         if(!presentation){
