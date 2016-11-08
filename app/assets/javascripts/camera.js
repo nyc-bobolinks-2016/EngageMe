@@ -57,7 +57,7 @@ $(document).ready(function(){
     } else {
 
       $('#start').attr('value', 'pause');
-      $('#faces').show();
+      $('#faces').show().text("Detecting Faces...");
       $('#clock').timer({
         format: '%H:%M:%S',
         seconds: timerTime
