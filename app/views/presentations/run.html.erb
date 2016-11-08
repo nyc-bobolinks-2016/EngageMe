@@ -4,11 +4,10 @@
     <div id="timer" class="center">
       <form name="clockform">
         <p id="clock" name="clock" value='<%= @presentation.time_taken %>'><%= @presentation.time_pretty %></p>
-        <br>
         <input id="start" class="waves-effect waves-light green darken-4" name="starter" type="button" value="Start/Pause"/>
-        <br><br>
         <input id="stop" class="waves-effect waves-light red darken-4" name="clearer" type="button" value="End" />
       </form>
+      <div id="faces"><%= @result.faces %> faces detected</div>
       <div id="stats">
         <div id="stats-title" class="center">Current Emotions</div>
         <div class="row emotions">

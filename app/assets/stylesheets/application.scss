@@ -43,8 +43,6 @@ main {
 #timer {
   width: 1000px;
   height: 750px;
-  text-align: center;
-  padding-top: 35px;
   position: absolute;
   z-index: 5;
   background-color: black;
@@ -52,11 +50,16 @@ main {
 }
 
 #clock {
+  margin-top: 18px;
   font-size: 40px;
   font-weight: bold;
-  height: 50%;
   text-align: center;
   color: white;
+}
+
+#faces {
+  color: white;
+  padding-top: 10px;
 }
 
 #start {
@@ -93,7 +96,6 @@ z-index: 4;
 }
 
 #stats-title {
-  padding-top: 10px;
   font-size: 2em;
   color: white;
 }
@@ -103,7 +105,7 @@ z-index: 4;
 }
 
 .emotion {
-  border: 1px solid white;
+  border: 1px solid #9e9e9e;
 }
 
 .emotion-title {

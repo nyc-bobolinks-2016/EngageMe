@@ -23,5 +23,4 @@ class Presentation < ApplicationRecord
 
     "#{hours}:#{minutes}:#{seconds}"
   end
-
 end
