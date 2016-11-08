@@ -38,7 +38,10 @@ $(document).ready(function(){
 
   $('#stop').on('click', function(){
     var url = (window.location.pathname).split("/run")[0];
-    window.location.href = url;
+    $.ajax({
+      url: url,
+      type: 'put'
+    })
   })
 
   $('#start').on("click", function(event){

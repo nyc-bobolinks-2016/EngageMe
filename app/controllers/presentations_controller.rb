@@ -23,8 +23,9 @@ class PresentationsController < ApplicationController
     end
   end
 
-  def edit
-    current_presentation =
+  def update
+    @presentation = Presentation.find_by(id: params[:id])
+    @presentation.update(finished: true)
   end
 
   def run
@@ -32,13 +33,13 @@ class PresentationsController < ApplicationController
     @presentation = Presentation.find_by(id: params[:id], user_id: user.id)
 
     redirect_to root_path unless user == current_user
-    render :run_error if user.past_presentations.include? presentation
+    render :run_error if @presentation.finished
   end
 
   def snapshot
     presentation = Presentation.find_by(id: params[:id])
     presentation.update(time_taken: params[:time_taken])
-    
+
     create_image
     render :json => new_result(get_emotions)
   end

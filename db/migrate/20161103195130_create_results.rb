@@ -1,7 +1,7 @@
 class CreateResults < ActiveRecord::Migration[5.0]
   def change
     create_table :results do |t|
-      t.decimal :anger, null: false,
+      t.decimal :anger, null: false
       t.decimal :contempt, null: false
       t.decimal :disgust, null: false
       t.decimal :fear, null: false

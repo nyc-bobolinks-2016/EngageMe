@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users do
     resources :presentations do
+      put 'update', :on => :member
       get 'run', :on => :member
       post 'snapshot', :on => :member
     end
