@@ -18,7 +18,7 @@
                 <p>[name] taps into the power of next-generation machine learning to help you be a more effective presenter. Our simple-to-use platform analyzes a live video feed of your audience to determine and categorize the emotions being manifested in real-time in response to your presentation content. Getting started with a new presentation is easy and takes just a few clicks.</p>
               </div>
               <div id="download-button" class="btn-large waves-effect waves-light orange darken-4">
-                <a  class="white-link" href="#">Create New Presentation</a>
+                <h5><%= link_to 'Create A New Presentation', new_user_presentation_path(@user), class: "white-link"%> <i style="vertical-align:bottom;" class="large material-icons">perm_media</i></h5>
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
                 <p>Once you have captured the real-time emotional responses to your content, our powerful analytics suite will help you visually see how the audience responded to your content and delivery. Compare results across presentations and gain new perspective into common emotional themes. Our dashboard offers both a streamlined view and full customization options to dig deep.</p>
               </div>
               <div class="btn-large waves-effect waves-light green darken-4">
-                <a class="white-link" href="#">View your user profile</a>
+                <h5><%= link_to 'View your user profile', user_path(@user), class: "white-link"%> <i style="vertical-align:bottom;", class="large material-icons">person_pin</i></h5>
               </div>
             </div>
             <div class="card-image">
