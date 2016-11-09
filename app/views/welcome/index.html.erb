@@ -7,7 +7,11 @@
         <h5 class="header col s12 light">Need help finding something interesting to talk about?</h5>
       </div>
       <div class="row center">
-        <a href="/users/new" id="download-button" class="btn-large waves-effect waves-light indigo darken-4">Get Started</a>
+        <%if current_user %>
+          <a href="/users/<%=session[:user_id]%>/presentations/new" id="download-button" class="btn-large waves-effect waves-light indigo darken-4">Get Started</a>
+        <% else %>
+          <a href="/users/new" id="download-button" class="btn-large waves-effect waves-light indigo darken-4">Get Started</a>
+        <% end %>
       </div>
       <br><br>
 
