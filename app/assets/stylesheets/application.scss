@@ -20,6 +20,7 @@ main {
 
 .black-background {
   background-color: black;
+  height: 100%;
 }
 
 #run-container {
@@ -29,30 +30,24 @@ main {
 
 
 #camera-container {
-  width: 1920px;
-  height: 1080px;
-  // width: 1000px;
-  // height: 750px;
+  width: 1000px;
+  height: 750px;
   margin: 0px auto;
   position: relative;
   z-index: 1;
 }
 
 #camera {
-  width: 1920px;
-  height: 1080px;
-  // width: 1000px;
-  // height: 750px;
+  width: 1000px;
+  height: 750px;
   margin: 0px auto;
   position: relative;
   z-index: 2;
 }
 
 #timer {
-  width: 1920px;
-  height: 1080px;
-  // width: 1000px;
-  // height: 750px;
+  width: 1000px;
+  height: 750px;
   position: absolute;
   z-index: 5;
   background-color: black;
@@ -70,6 +65,7 @@ main {
 #faces {
   color: white;
   padding-top: 10px;
+  display: none;
 }
 
 #start {
@@ -83,20 +79,16 @@ main {
 }
 
 #videoElement {
-width: 1920px;
-height: 1080px;
-// width: 1000px;
-// height: 750px;
+width: 1000px;
+height: 750px;
 background-color: #666;
 position: absolute;
 z-index: 4;
 }
 
 #camera-canvas {
-  width: 1920px;
-  height: 1080px;
-  // width: 1000px;
-  // height: 750px;
+  width: 1000px;
+  height: 750px;
   position: relative;
   z-index: 3;
 }
@@ -206,13 +198,4 @@ z-index: 4;
   vertical-align: top;
   height: 20px;
   width: 50%;
-}
-
-.black-background {
-  // min-height: 30vh;
-  height: 100%;
-}
-
-#faces {
-  display: none;
 }
