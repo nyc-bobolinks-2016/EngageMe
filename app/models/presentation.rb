@@ -24,6 +24,60 @@ class Presentation < ApplicationRecord
     "#{hours}:#{minutes}:#{seconds}"
   end
 
+  def presentation_average_results
+    avg = {}
+    self.results.each do |r|
+      r.emotions_hash.each do |k,v|
+        avg[k] ? avg[k] = avg[k] + v.to_f.round(2) : avg[k] = v.to_f.round(2)
+      end
+    end
+
+    avg.each {|k,v| avg[k] = avg[k]/results.length}
+    avg
+  end
+
+  def format_pie_chart_data
+    data = {
+      labels: [
+          "anger",
+          "contempt",
+          "fear",
+          "disgust",
+          "happiness",
+          "neutral",
+          "sadness",
+          "surprise"
+      ],
+      datasets: [
+          {
+              data: [],
+              backgroundColor: [
+                "#ff0038",
+                "#8C8984",
+                "#eb3c00",
+                "#ffce38",
+                "#fa00cf",
+                "#63ea3e",
+                "#0205c1",
+                "#ff7c00"
+              ],
+              hoverBackgroundColor: [
+                "rgba(255,0,56,0.8)",
+                "rgba(140,137,132,0.8)",
+                "rgba(235,60,0,0.8)",
+                "rgba(255,206,56,0.8)",
+                "rgba(250,0,207,0.8)",
+                "rgba(99,234,62,0.8)",
+                "rgba(2,5,193,0.8)",
+                "rgba(255,124,0,0.8)"
+              ]
+          }]
+    };
+
+    presentation_average_results.each {|k,v| data[:datasets][0][:data] << v}
+    data
+  end
+
   def format_line_graph_data
     data = {
         # labels are emotions
