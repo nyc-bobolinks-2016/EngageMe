@@ -36,4 +36,16 @@ class Result < ApplicationRecord
     }
   end
 
+  def colors
+    {
+      anger: ["rgba(255,0,56,0.8)", "#ff0038"],
+      contempt: ["rgba(140,137,132,0.8)", "#8C8984"],
+      disgust: ["rgba(235,60,0,0.8)", "#eb3c00"],
+      fear: ["rgba(255,206,56,0.8)", "#ffce38"],
+      happiness: ["rgba(250,0,207,0.8)", "#fa00cf"],
+      neutral: ["rgba(99,234,62,0.8)", "#63ea3e"],
+      sadness: ["rgba(2,5,193,0.8)", "#0205c1"],
+      surprise: ["rgba(255,124,0,0.8)", "#ff7c00"]
+    }
+  end
 end
