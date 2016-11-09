@@ -215,4 +215,29 @@ z-index: 4;
 
 .white-link {
   color: #FFF;
+
+#get-started {
+  padding: 20px 20px 40px 20px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+#new-presentation {
+  float: right;
+}
+
+#profile-icon {
+  vertical-align: middle;
+}
+
+#home-title {
+  position: relative;
+  top: 60px;
+  @media only screen and (max-width: 688px) {
+    top: 30px;
+  }
+  @media only screen and (max-width: 674px) {
+    top: 20px;
+  }
+  left: 5%;
+  width: 90%;
+  background-color: rgba(0,0,0,0.8);
 }
