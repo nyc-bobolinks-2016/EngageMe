@@ -29,24 +29,30 @@ main {
 
 
 #camera-container {
-  width: 1000px;
-  height: 750px;
+  width: 1920px;
+  height: 1080px;
+  // width: 1000px;
+  // height: 750px;
   margin: 0px auto;
   position: relative;
   z-index: 1;
 }
 
 #camera {
-  width: 1000px;
-  height: 750px;
+  width: 1920px;
+  height: 1080px;
+  // width: 1000px;
+  // height: 750px;
   margin: 0px auto;
   position: relative;
   z-index: 2;
 }
 
 #timer {
-  width: 1000px;
-  height: 750px;
+  width: 1920px;
+  height: 1080px;
+  // width: 1000px;
+  // height: 750px;
   position: absolute;
   z-index: 5;
   background-color: black;
@@ -77,16 +83,20 @@ main {
 }
 
 #videoElement {
-width: 1000px;
-height: 750px;
+width: 1920px;
+height: 1080px;
+// width: 1000px;
+// height: 750px;
 background-color: #666;
 position: absolute;
 z-index: 4;
 }
 
 #camera-canvas {
-  width: 1000px;
-  height: 750px;
+  width: 1920px;
+  height: 1080px;
+  // width: 1000px;
+  // height: 750px;
   position: relative;
   z-index: 3;
 }
