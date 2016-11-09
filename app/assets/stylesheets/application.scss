@@ -227,3 +227,17 @@ z-index: 4;
 #profile-icon {
   vertical-align: middle;
 }
+
+#home-title {
+  position: relative;
+  top: 60px;
+  @media only screen and (max-width: 688px) {
+    top: 30px;
+  }
+  @media only screen and (max-width: 674px) {
+    top: 20px;
+  }
+  left: 5%;
+  width: 90%;
+  background-color: rgba(0,0,0,0.8);
+}
