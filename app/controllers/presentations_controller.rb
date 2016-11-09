@@ -3,11 +3,9 @@ class PresentationsController < ApplicationController
     @user = User.find(params[:user_id])
     @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
     @data = @presentation.format_line_graph_data
-    @options = {
-      borderWidth: 1
-    }
+    @options = {}
     @pie_data = @presentation.format_pie_chart_data
-
+    @radar_data = @presentation.format_radar_data
     redirect_to root_path unless @user == current_user && @presentation
   end
 
