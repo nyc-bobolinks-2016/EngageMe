@@ -72,9 +72,64 @@ class Presentation < ApplicationRecord
                 "rgba(255,124,0,0.8)"
               ]
           }]
-    };
+    }
 
     presentation_average_results.each {|k,v| data[:datasets][0][:data] << v}
+    data
+  end
+
+  def average_all_presentations
+    avg = {}
+    presentations = Presentation.where(user_id: self.user_id)
+    presentations.each do |p|
+      p.presentation_average_results.each do |k,v|
+        avg[k] ? avg[k] = avg[k] + v.to_f.round(2) : avg[k] = v.to_f.round(2)
+      end
+    end
+
+    avg.each {|k,v| avg[k] = (avg[k]/presentations.length).round(2)}
+
+    avg
+  end
+
+  def format_radar_data
+    data = {
+      labels: [
+          "anger",
+          "contempt",
+          "fear",
+          "disgust",
+          "happiness",
+          "neutral",
+          "sadness",
+          "surprise"
+      ],
+      datasets: [
+          {
+              label: self.name,
+              backgroundColor: "rgba(179,181,198,0.2)",
+              borderColor: "rgba(179,181,198,1)",
+              pointBackgroundColor: "rgba(179,181,198,1)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgba(179,181,198,1)",
+              data: []
+          },
+          {
+              label: "All presentations",
+              backgroundColor: "rgba(255,99,132,0.2)",
+              borderColor: "rgba(255,99,132,1)",
+              pointBackgroundColor: "rgba(255,99,132,1)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgba(255,99,132,1)",
+              data: []
+          }
+      ]
+    }
+
+    average_all_presentations.each {|k,v| data[:datasets][0][:data] << v.round(2)}
+    presentation_average_results.each {|k,v| data[:datasets][1][:data] << v.round(2)}
     data
   end
 
@@ -87,7 +142,6 @@ class Presentation < ApplicationRecord
               label: "anger",
               borderWidth: 1,
               backgroundColor: "rgba(255,0,56,0.1)",
-              borderWidth: 1,
               borderColor: "#ff0038",
               fill: true,
               lineTension: 0.1,
@@ -274,7 +328,7 @@ class Presentation < ApplicationRecord
 
       results = self.results
       results.each_with_index do |r, j|
-        data[:labels] << "#{j * 3}s"
+        data[:labels] << "#{j * 1}s"
         r.emotions_hash.each_with_index {|k, i| data[:datasets][i][:data] << k[1].round(3)}
       end
       data
