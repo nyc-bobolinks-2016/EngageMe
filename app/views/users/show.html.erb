@@ -1,68 +1,69 @@
 <div class="container">
-  <h2>Hello <%= @user.username %></h2>
-
-<%= link_to 'Create A New Presentation', new_user_presentation_path(@user), :class => "btn-large waves-effect waves-light green darken-4" %>
-
-<h4>Your Current Presentations:</h4>
-
-<% if @current_presentations != [] %>
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Location</th>
-        <th>Date</th>
-        <th>Time</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @current_presentations.each do |presentation| %>
-      <tr>
-        <td><%= presentation.name %></td>
-        <td><%= presentation.location %></td>
-        <td><%= presentation.date_given %></td>
-        <td><%= presentation.start %></td>
-        <td><%= link_to 'Run', run_user_presentation_path(@user, presentation), :class => "btn waves-effect waves-light green darken-4"%>
-        <td><%= link_to 'View', user_presentation_path(@user, presentation),  :class => "btn waves-effect waves-light indigo darken-4" %></td>
-        <td><%= link_to 'Delete', user_presentation_path(@user, presentation),
-              method: :delete,
-              data: { confirm: 'Are you sure you want to delete this presentation?' }, :class => "btn waves-effect waves-light red darken-4"%>
-          </td>
-          </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
- <p>You have no current presentations.</p>
-<% end %>
-
-<h4>Your Previous Presentations:</h4>
-
-<% if @past_presentations != [] %>
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Location</th>
-        <th>Date Given</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @past_presentations.each do |presentation| %>
+  <br><br>
+  <div id="new-presentation"><%= link_to 'Create A New Presentation', new_user_presentation_path(@user), :class => "btn-large waves-effect waves-light green darken-4" %></div>
+  <h4><i id="profile-icon" class="material-icons small">person_pin</i> <%= @user.username %>'s Profile</h4>
+  <br>
+  <h5>Upcoming Presentations</h5>
+  <% if @current_presentations != [] %>
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @current_presentations.each do |presentation| %>
         <tr>
           <td><%= presentation.name %></td>
           <td><%= presentation.location %></td>
           <td><%= presentation.date_given %></td>
+          <td><%= presentation.start %></td>
+          <td><%= link_to 'Run', run_user_presentation_path(@user, presentation), :class => "btn waves-effect waves-light green darken-4"%>
           <td><%= link_to 'View', user_presentation_path(@user, presentation),  :class => "btn waves-effect waves-light indigo darken-4" %></td>
-          <td class="center"><%= link_to 'Delete', user_presentation_path(@user, presentation),
+          <td><%= link_to 'Delete', user_presentation_path(@user, presentation),
                 method: :delete,
-                data: { confirm: 'Are you sure you want to delete this presentation?' }, :class => "btn waves-effect waves-light red darken-4" %></td>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
- <p>You currently do not have any previous presentations.</p>
-<% end %>
+                data: { confirm: 'Are you sure you want to delete this presentation?' }, :class => "btn waves-effect waves-light red darken-4"%>
+            </td>
+            </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+   <p>You have no current presentations.</p>
+  <% end %>
+  <br>
+  <h5>Previous Presentations</h5>
+  <% if @past_presentations != [] %>
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Location</th>
+          <th>Date Given</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @past_presentations.each do |presentation| %>
+          <tr>
+            <td><%= presentation.name %></td>
+            <td><%= presentation.location %></td>
+            <td><%= presentation.date_given %></td>
+            <td><%= link_to 'Review', user_presentation_path(@user, presentation),  :class => "btn waves-effect waves-light indigo darken-4" %></td>
+            <td class="center"><%= link_to 'Delete', user_presentation_path(@user, presentation),
+                  method: :delete,
+                  data: { confirm: 'Are you sure you want to delete this presentation?' }, :class => "btn waves-effect waves-light red darken-4" %></td>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+   <p>You currently do not have any previous presentations.</p>
+  <% end %>
+  <br>
+  <div>* Full analytics are available once a presentation is completed.</div>
+  <br><br>
 </div>
