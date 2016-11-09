@@ -107,6 +107,7 @@ class Presentation < ApplicationRecord
       datasets: [
           {
               label: self.name,
+              borderWidth: 1,
               backgroundColor: "rgba(179,181,198,0.2)",
               borderColor: "rgba(179,181,198,1)",
               pointBackgroundColor: "rgba(179,181,198,1)",
@@ -116,7 +117,8 @@ class Presentation < ApplicationRecord
               data: []
           },
           {
-              label: "All presentations",
+              label: "Combined emotions of all presentations",
+              borderWidth: 1,
               backgroundColor: "rgba(255,99,132,0.2)",
               borderColor: "rgba(255,99,132,1)",
               pointBackgroundColor: "rgba(255,99,132,1)",
@@ -139,200 +141,248 @@ class Presentation < ApplicationRecord
         labels: [],
         datasets: [
           {
-              label: "anger",
-              borderWidth: 1,
-              backgroundColor: "rgba(255,0,56,0.1)",
-              borderColor: "#ff0038",
-              fill: true,
-              lineTension: 0.1,
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              spanGaps: true,
-              # data are percentages
+            label: "anger",
+            borderWidth: 1,
+            backgroundColor: "rgba(255,0,56,0.1)",
+            borderColor: "#ff0038",
+            fill: true,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            spanGaps: true,
+            # data are percentages
               data: []
           },
           {
-              label: "contempt",
-              backgroundColor: "rgba(140,137,132,0.1)",
-              borderWidth: 1,
-              borderColor: "#8C8984",
-              fill: true,
-              lineTension: 0.1,
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              spanGaps: true,
-              data: []
+            label: "contempt",
+            backgroundColor: "rgba(140,137,132,0.1)",
+            borderWidth: 1,
+            borderColor: "#8C8984",
+            fill: true,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            spanGaps: true,
+            data: []
           },
           {
-              label: "disgust",
-              backgroundColor: "rgba(235,60,0,0.1)",
-              borderWidth: 1,
-              borderColor: "#eb3c00",
-              fill: true,
-              lineTension: 0.1,
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'bevel',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              spanGaps: true,
-              data: []
+            label: "disgust",
+            backgroundColor: "rgba(235,60,0,0.1)",
+            borderWidth: 1,
+            borderColor: "#eb3c00",
+            fill: true,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'bevel',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            spanGaps: true,
+            data: []
           },
           {
-              label: "fear",
-              backgroundColor: "rgba(255,206,56,0.1)",
-              borderWidth: 1,
-              borderColor: "#ffce38",
-              fill: true,
-              lineTension: 0.1,
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'round',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              spanGaps: true,
-              data: []
+            label: "fear",
+            backgroundColor: "rgba(255,206,56,0.1)",
+            borderWidth: 1,
+            borderColor: "#ffce38",
+            fill: true,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'round',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            spanGaps: true,
+            data: []
           },
           {
-              label: "happiness",
-              backgroundColor: "rgba(250,0,207,0.1)",
-              borderWidth: 1,
-              borderColor: "#fa00cf",
-              fill: true,
-              lineTension: 0.1,
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'bevel',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              spanGaps: true,
-              data: []
+            label: "happiness",
+            backgroundColor: "rgba(250,0,207,0.1)",
+            borderWidth: 1,
+            borderColor: "#fa00cf",
+            fill: true,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'bevel',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            spanGaps: true,
+            data: []
           },
           {
-              label: "neutral",
-              backgroundColor: "rgba(99,234,62,0.1)",
-              borderWidth: 1,
-              borderColor: "#63ea3e",
-              fill: true,
-              lineTension: 0.1,
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              spanGaps: true,
-              data: []
+            label: "neutral",
+            backgroundColor: "rgba(99,234,62,0.1)",
+            borderWidth: 1,
+            borderColor: "#63ea3e",
+            fill: true,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            spanGaps: true,
+            data: []
           },
           {
-              label: "sadness",
-              backgroundColor: "rgba(2,5,193,0.1)",
-              borderWidth: 1,
-              borderColor: "#0205c1",
-              fill: true,
-              lineTension: 0.1,
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              spanGaps: true,
-              data: []
-          },
-          {
-              label: "surprise",
-              backgroundColor: "rgba(255,124,0,0.1)",
-              borderWidth: 1,
-              borderColor: "#ff7c00",
-              fill: true,
-              lineTension: 0.1,
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              spanGaps: true,
-              data: []
-          }
-        ]
-      }
+            label: "sadness",
+            backgroundColor: "rgba(2,5,193,0.1)",
+            borderWidth: 1,
+            borderColor: "#0205c1",
+            fill: true,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            spanGaps: true,
+            data: []
+        },
+        {
+            label: "surprise",
+            backgroundColor: "rgba(255,124,0,0.1)",
+            borderWidth: 1,
+            borderColor: "#ff7c00",
+            fill: true,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            spanGaps: true,
+            data: []
+        }
+      ]
+    }
 
-      results = self.results
-      results.each_with_index do |r, j|
-        data[:labels] << "#{j * 1}s"
-        r.emotions_hash.each_with_index {|k, i| data[:datasets][i][:data] << k[1].round(3)}
-      end
-      data
+    results = self.results
+    results.each_with_index do |r, j|
+      data[:labels] << "#{j * 1}s"
+      r.emotions_hash.each_with_index {|k, i| data[:datasets][i][:data] << k[1].round(3)}
     end
+    data
+  end
+
+  def presentation_bar_data
+    data = {
+      labels: [],
+      datasets: [
+          {
+              label: "My First dataset",
+              backgroundColor: [
+
+              ],
+
+              borderColor: [
+
+              ],
+              borderWidth: 1,
+              data: [],
+          }
+      ]
+    };
+    results = self.results
+    l = results.length
+    rpdp = l/20
+    puts "-=====================---==========================--===================="
+    p rpdp
+    puts "-=====================---==========================--===================="
+      #results per data point
+      time = 0
+      results.each_slice(rpdp) do |result_slice|
+        time += 1
+        top = {}
+        avrg = {}
+        avrg.default = 0
+        result_slice.each do |result|
+          result.emotions_hash.each do |k,v|
+            avrg[k] = avrg[k] + v.to_f
+          end
+          avrg.each {|k,v| avrg[k] = v}
+          top = avrg.select {|k,v| v == avrg.values.max}
+        end
+
+        data[:labels] << time
+        data[:datasets][0][:data] << top.values[0].to_f/rpdp
+        data[:datasets][0][:borderColor] << result_slice[0].colors[top.keys[0]][1]
+        data[:datasets][0][:backgroundColor] << result_slice[0].colors[top.keys[0]][0]
+        data
+      end
+    data
+  end
 
   def date_given
     self.end_time.strftime("%D")
