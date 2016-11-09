@@ -6,6 +6,8 @@ class PresentationsController < ApplicationController
     @options = {
       borderWidth: 1
     }
+    @pie_data = @presentation.format_pie_chart_data
+
     redirect_to root_path unless @user == current_user && @presentation
   end
 

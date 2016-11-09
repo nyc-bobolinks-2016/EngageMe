@@ -45,16 +45,16 @@
 <%= horizontal_bar_chart @data, @options %>
 
 <h3> Radar chart</h3>
-<%= radar_chart          @data, @options %>
+<%= radar_chart          @pie_data, @options %>
 
 <h3>Polar area chart</h3>
-<%= polar_area_chart     @data, @options %>
+<%= polar_area_chart     @pie_data, @options %>
 
-<h3>Pie chart</h3>
-<%= pie_chart            @data, @options %>
+<h3>Overall emotion overview:</h3>
+<%= pie_chart            @pie_data, @options %>
 
 <h3>Doughnut chart</h3>
-<%= doughnut_chart       @data, @options %>
+<%= doughnut_chart       @pie_data, @options %>
 
 <h3>bubble chart</h3>
 <%= bubble_chart         @data, @options %>
