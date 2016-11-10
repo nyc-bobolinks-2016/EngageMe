@@ -36,14 +36,14 @@
 <%= link_to 'Return to Index', user_path(@presentation.user), class: "something"%>
 
 <div class="">
-  <h2>Presentation emotion overview:</h2>
+  <h3>Presentation emotion overview:</h3>
   <div class="row">
-    <div class="col s6">
-      <h2>Pie chart title:</h2>
+    <div class="col m6 s12">
+      <h4>Total emotions:</h2>
       <%= pie_chart      @pie_data, @options %>
     </div>
-    <div class="col s6">
-      <h3> Radar chart</h3>
+    <div class="col m6 s12">
+      <h4>This presentation vs overall performance</h3>
       <%= radar_chart          @radar_data, @options %>
     </div>
   </div>
@@ -53,6 +53,7 @@
 </div>
 
 <h3>Line chart</h3>
+<<<<<<< HEAD
 <%= line_chart           @data, @options %>
 
 <h3>Bar chart</h3>
@@ -87,4 +88,5 @@
   <%= link_to 'Get Me Started', new_user_presentation_path(@user), :class => "btn-large waves-effect waves-light green darken-4" %>
 </div>
 <br>
+<%= react_component('MyChart', name: 'John') %>
 </div>
