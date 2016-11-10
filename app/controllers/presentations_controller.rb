@@ -4,12 +4,10 @@ class PresentationsController < ApplicationController
     @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
     @data = @presentation.format_line_graph_data
     @bar_data = @presentation.presentation_bar_data
-    @options = {
-      defaultFontColor: "black"
-    }
+    @options = {}
     @pie_data = @presentation.format_pie_chart_data
     @radar_data = @presentation.format_radar_data
-    redirect_to root_path unless @user == current_user && @presentation
+
   end
 
   def new

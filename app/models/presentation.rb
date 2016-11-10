@@ -357,10 +357,6 @@ class Presentation < ApplicationRecord
     results = self.results
     l = results.length
     rpdp = l/20
-    puts "-=====================---==========================--===================="
-    p rpdp
-    puts "-=====================---==========================--===================="
-      #results per data point
       time = 0
       results.each_slice(rpdp) do |result_slice|
         time += 1

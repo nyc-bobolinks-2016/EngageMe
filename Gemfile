@@ -25,7 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'chartjs-ror'
 
-
+gem 'react-rails'
 
 gem 'capybara'
 

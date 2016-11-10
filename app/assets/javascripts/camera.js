@@ -1,5 +1,5 @@
 // Elements for taking the snapshot
-$(document).ready(function(){
+$('#run-container').ready(function(){
   var canvas = document.getElementById('camera-canvas');
   var context = canvas.getContext('2d');
   var video = document.getElementById('videoElement');
@@ -29,11 +29,13 @@ $(document).ready(function(){
       var emotions_hash = response.emotions
       var emotions = Object.keys(emotions_hash)
       for(i=0; i < emotions.length; i++){
-        $('#' + emotions[i]).css('opacity', emotions_hash[emotions[i]][1])
-        $('#faces').text(response.faces + ' faces detected')
-        $('#' + emotions[i]).animate({
-          width: emotions_hash[emotions[i]][0]
-        }, 1000 );
+        if(presentation){
+          $('#' + emotions[i]).css('opacity', emotions_hash[emotions[i]][1])
+          $('#faces').text(response.faces + ' faces detected')
+          $('#' + emotions[i]).animate({
+            width: emotions_hash[emotions[i]][0]
+          }, 1000 );
+        }
        }
     })
   }
