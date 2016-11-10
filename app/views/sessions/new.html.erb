@@ -1,15 +1,30 @@
 <div class="container">
-  <h2>Login</h2>
+  <h4 class="login-title">User Login</h4>
 
+
+<div class="card-box">
   <p>
     <%= @error if @error %>
   </p>
-
-  <%= form_tag '/login' do %>
-    <%= label_tag("Email:") %>
-    <%= text_field_tag :email %>
-    <%= label_tag("Password:") %>
-    <%= password_field_tag :password %>
-    <%= submit_tag "Submit", :class => "btn-large waves-effect waves-light indigo darken-4" %>
+  <%= form_for :session, url: "/login" do %>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="email" type="text" class="validate" required>
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="password" type="password" class="validate" required>
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button type="submit" class="login-button validate btn-large waves-effect waves-light green darken-4 center-button col s12">Submit</button>
+      </div>
+    </div>
   <% end %>
+</div>
+
 </div>

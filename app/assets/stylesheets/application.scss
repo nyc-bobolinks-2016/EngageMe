@@ -206,11 +206,35 @@ z-index: 4;
 
 .card-box {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 10px;
+  margin: auto;
+  width: 50%;
+  // background-color: #DDD;
+}
+
+.login-title {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.login-button {
+  margin: auto;
+  width: 100%;
+}
+.center-button {
+  margin:auto;
+  width: 100%;
 }
 
 .card-image {
   max-height: 300px;
   overflow: hidden;
+  display: inline-block;
+}
+.card-stacked {
+  display: inline-block;
 }
 
 .white-link {
