@@ -353,10 +353,12 @@ class Presentation < ApplicationRecord
               data: [],
           }
       ]
-    };
+    }
     results = self.results
     l = results.length
     rpdp = l/20
+
+    if l > 19
       time = 0
       results.each_slice(rpdp) do |result_slice|
         time += 1
@@ -377,6 +379,7 @@ class Presentation < ApplicationRecord
         data[:datasets][0][:backgroundColor] << result_slice[0].colors[top.keys[0]][0]
         data
       end
+    end
     data
   end
 

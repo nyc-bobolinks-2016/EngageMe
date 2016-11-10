@@ -38,12 +38,12 @@
 <div class="">
   <h3>Presentation emotion overview:</h3>
   <div class="row">
-    <div class="col m6 s12">
-      <h4>Total emotions:</h2>
+    <div class="col m5 s12">
+      <h4 class="chart-title">Total emotions:</h2>
       <%= pie_chart      @pie_data, @options %>
     </div>
-    <div class="col m6 s12">
-      <h4>This presentation vs overall performance</h3>
+    <div class="col m5 s12">
+      <h4 class="chart-title">This presentation vs overall performance</h3>
       <%= radar_chart          @radar_data, @options %>
     </div>
   </div>
@@ -53,32 +53,7 @@
 </div>
 
 <h3>Line chart</h3>
-<<<<<<< HEAD
 <%= line_chart           @data, @options %>
-
-<h3>Bar chart</h3>
-<%= bar_chart            @data, @options %>
-
-<h3>Horizontal bar chart</h3>
-<%= horizontal_bar_chart @data, @options %>
-
-<h3> Radar chart</h3>
-<%= radar_chart          @radar_data, @options %>
-
-<h3>Polar area chart</h3>
-<%= polar_area_chart     @pie_data, @options %>
-
-<h3>Overall emotion overview:</h3>
-<%= pie_chart            @pie_data, @options %>
-
-<h3>Doughnut chart</h3>
-<%= doughnut_chart       @pie_data, @options %>
-
-<h3>bubble chart</h3>
-<%= bubble_chart         @data, @options %>
-
-<h3>Scatter chart</h3>
-<%= scatter_chart        @data, @options %>
 
 <br><br>
 <div id="get-started" class="center">
@@ -88,5 +63,4 @@
   <%= link_to 'Get Me Started', new_user_presentation_path(@user), :class => "btn-large waves-effect waves-light green darken-4" %>
 </div>
 <br>
-<%= react_component('MyChart', name: 'John') %>
 </div>
