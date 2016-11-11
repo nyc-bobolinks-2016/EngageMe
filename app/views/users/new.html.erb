@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Register</h2>
+  <h4 class="login-title">New User</h2>
 
 <% if @errors %>
 <ul>
@@ -9,48 +9,83 @@
 </ul>
 <% end %>
 
-<% if @errors %>
-<ul>
-  <% @errors.each do |error| %>
-  <li><%= error %></li>
+<div class="card-box">
+  <%= form_for :user, url: '/users' do |f| %>
+    Username
+    <br>
+    <div class="input-field offset-s3 col s6">
+      <%= f.text_field :username %>
+    </div>
+    <br>
+    Email
+    <br>
+    <div class="input-field offset-s3 col s6">
+      <%= f.text_field :email %>
+    </div>
+    <br>
+    Organization
+    <br>
+    <div class="input-field offset-s3 col s6">
+      <%= f.text_field :organization %>
+    </div>
+    <br>
+    Password
+    <br>
+    <div class="input-field offset-s3 col s6">
+      <%= f.password_field :password %>
+    </div>
+    <br>
+    Password Confirmation
+    <br>
+    <div class="input-field offset-s3 col s6">
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <br>
+    <%= f.submit 'Register', :class => "login-button btn-large waves-effect waves-light green darken-4 center-button col s12" %>
+
   <% end %>
-</ul>
-<% end %>
-
-<%= form_for :user, url: '/users' do |f| %>
-
-  Username:
-  <br>
-  <div class="input-field offset-s3 col s6">
-    <%= f.text_field :username %>
-  </div>
-  <br>
-  Email:
-  <br>
-  <div class="input-field offset-s3 col s6">
-    <%= f.text_field :email %>
-  </div>
-  <br>
-  Organization:
-  <br>
-  <div class="input-field offset-s3 col s6">
-    <%= f.text_field :organization %>
-  </div>
-  <br>
-  Password:
-  <br>
-  <div class="input-field offset-s3 col s6">
-    <%= f.password_field :password %>
-  </div>
-  <br>
-  Password Confirmation:
-  <br>
-  <div class="input-field offset-s3 col s6">
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <br>
-  <%= f.submit 'Register', :class => "btn-large waves-effect waves-light green darken-4" %>
-
-<% end %>
+</div>
 <br>
 </div>
+
+<!-- <div class="card-box">
+  <%= form_for :user, url: '/users' do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="user[username]" type="text" class="validate" required>
+        <label for="[user]username">Username</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="user[email]" type="text" class="validate" required>
+        <label for="[user]email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="user[organization]" type="text" class="validate" required>
+        <label for="[user]organization">Organization</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="user[password]" type="password" class="validate" required>
+        <label for="[user]password">Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="[user]password_confirmation" type="password" class="validate" required>
+        <label for="[user]password_confirmation">Confirm Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button type="submit" class="login-button validate btn-large waves-effect waves-light green darken-4 center-button col s12">Create Account</button>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+</div> -->
