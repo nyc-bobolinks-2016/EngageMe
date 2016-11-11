@@ -108,8 +108,8 @@ class Presentation < ApplicationRecord
           {
               label: self.name,
               borderWidth: 1,
-              backgroundColor: "rgba(179,181,198,0.2)",
-              borderColor: "rgba(179,181,198,1)",
+              backgroundColor: "rgba(30,144,255, 0.2)",
+              borderColor: "rgb(30,144,255)",
               pointBackgroundColor: "rgba(179,181,198,1)",
               pointBorderColor: "#fff",
               pointHoverBackgroundColor: "#fff",
@@ -341,14 +341,10 @@ class Presentation < ApplicationRecord
       labels: [],
       datasets: [
           {
-              label: "My First dataset",
-              backgroundColor: [
+              label: '',
+              backgroundColor: [],
+              borderColor: [],
 
-              ],
-
-              borderColor: [
-
-              ],
               borderWidth: 1,
               data: [],
           }

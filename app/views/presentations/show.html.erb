@@ -45,6 +45,9 @@
       <h5 class="chart-title">Emotions</h5>
       <%= pie_chart      @pie_data, @options %>
     </div>
+    <div class="col m2">
+
+    </div>
     <div class="col m5 s12">
       <h5 class="chart-title">Emotions Distribution (relative)</h5>
       <%= radar_chart          @radar_data, @options %>
@@ -54,7 +57,8 @@
     <br>
     <br>
     <h5 class="chart-title">Predominant Emotions (by time)</h5>
-    <%= bar_chart          @bar_data, @options %>
+    <img style="width: 70%" src="/images/chartLegend.png" alt=""/>
+    <%= bar_chart          @bar_data, @bar_options %>
   </div>
 </div>
 <br>
