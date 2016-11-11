@@ -36,28 +36,36 @@
 <%= link_to 'Return to Index', user_path(@presentation.user), class: "something"%>
 
 <% if @presentation.finished %>
-  <div class="">
-    <h3>Presentation emotion overview:</h3>
-    <div class="row">
-      <div class="col m5 s12">
-        <h4 class="chart-title">Total emotions:</h2>
-        <%= pie_chart      @pie_data, @options %>
-      </div>
-      <div class="col m5 s12">
-        <h4 class="chart-title">This presentation vs overall performance</h3>
-        <%= radar_chart          @radar_data, @options %>
-      </div>
+<div class="">
+  <br>
+  <br>
+  <h4>Presentation emotion overview</h4>
+  <div class="row">
+    <div class="col m5 s12">
+      <h5 class="chart-title">Emotions</h5>
+      <%= pie_chart      @pie_data, @options %>
     </div>
-    <div class="row">
-      <%= bar_chart          @bar_data, @options %>
+    <div class="col m5 s12">
+      <h5 class="chart-title">Emotions Distribution (relative)</h5>
+      <%= radar_chart          @radar_data, @options %>
     </div>
   </div>
-
-  <h3>Line chart</h3>
-  <%= line_chart           @data, @options %>
+  <div class="row">
+    <br>
+    <br>
+    <h5 class="chart-title">Predominant Emotions (by time)</h5>
+    <%= bar_chart          @bar_data, @options %>
+  </div>
+</div>
+<br>
+<br>
+<h5 class="chart-title">All Emotions (by time)</h5>
+<%= line_chart           @data, @options %>
 
   <br><br>
 <% end %>
+<br>
+<br>
 <div id="get-started" class="center">
   <h4>Ready to create a new presentation?</h4>
   <div>Our app is designed to make you life easier. Click below and we'll handle all the heavy lifting for you.</div>
