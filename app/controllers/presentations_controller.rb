@@ -4,7 +4,20 @@ class PresentationsController < ApplicationController
     @presentation = Presentation.find_by(id: params[:id], user_id: @user.id)
     @data = @presentation.format_line_graph_data
     @bar_data = @presentation.presentation_bar_data
-    @options = {}
+    @bar_options = {
+      width: 500,
+      height: 200,
+      legend: {
+        display: false
+      }
+    }
+    @line_options = {
+      width: 500,
+      height: 200
+    }
+    @options = {
+
+    }
     @pie_data = @presentation.format_pie_chart_data
     @radar_data = @presentation.format_radar_data
 
