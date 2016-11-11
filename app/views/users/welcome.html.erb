@@ -1,10 +1,5 @@
 <div class="container">
   <h3>Welcome, <%= @user.username %></h3>
-  <div class="row">
-    <div class="col s12">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
-  </div>
   <br>
   <h4>Real-Time Emotional Feedback</h4>
     <div class="row">
@@ -15,7 +10,7 @@
             </div>
             <div class="card-stacked">
               <div class="card-content">
-                <p>[name] taps into the power of next-generation machine learning to help you be a more effective presenter. Our simple-to-use platform analyzes a live video feed of your audience to determine and categorize the emotions being manifested in real-time in response to your presentation content. Getting started with a new presentation is easy and takes just a few clicks.</p>
+                <p>EngageMe taps into the power of next-generation machine learning to help you be a more effective presenter. Our simple-to-use platform analyzes a live video feed of your audience to determine and categorize the emotions being manifested in real-time in response to your presentation content. Getting started with a new presentation is easy and takes just a few clicks.</p>
               </div>
               <div id="download-button" class="btn-large waves-effect waves-light orange darken-4">
                 <h5><%= link_to 'Create A New Presentation', new_user_presentation_path(@user), class: "white-link"%> <i style="vertical-align:bottom;" class="large material-icons">perm_media</i></h5>
